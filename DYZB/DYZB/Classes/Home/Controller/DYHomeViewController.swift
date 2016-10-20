@@ -8,8 +8,22 @@
 
 import UIKit
 
+let kTitleViewH : CGFloat = 40.0
+
+
 class DYHomeViewController: UIViewController {
 
+    // MARK: -懒加载属性
+    fileprivate lazy var pageTitleView :DYPageTitleView = {
+        
+        let titleFrame = CGRect(x: 0.0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kTitleViewH)
+        let titles = ["推荐", "游戏", "娱乐", "趣玩"]
+        let titleView = DYPageTitleView(frame: titleFrame, titles: titles)
+        
+        return titleView
+        
+        }()
+    
     // MARK: -系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +35,19 @@ class DYHomeViewController: UIViewController {
     
 }
 
-// MARK: -设置导航栏内容
+// MARK: -设置UI界面
 extension DYHomeViewController {
     // MARK: 设置导航栏
     fileprivate func setupUI() {
+        
+        // 不需要调整scrollView的内边距
+        automaticallyAdjustsScrollViewInsets = false
+        
         // 设置导航栏
         setupNavBarItem2()
+        
+        // 添加titleView
+        view.addSubview(pageTitleView)
     }
     
     // 直接设置的方法(low)

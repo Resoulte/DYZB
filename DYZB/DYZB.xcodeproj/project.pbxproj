@@ -20,6 +20,8 @@
 		048625D71DB798B700596733 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048625D51DB798B700596733 /* LaunchScreen.storyboard */; };
 		048625E21DB798B700596733 /* DYZBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048625E11DB798B700596733 /* DYZBTests.swift */; };
 		048625ED1DB798B700596733 /* DYZBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048625EC1DB798B700596733 /* DYZBUITests.swift */; };
+		04A97C221DB8EBFD00087920 /* DYPageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A97C211DB8EBFD00087920 /* DYPageTitleView.swift */; };
+		04A97C241DB8F58300087920 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A97C231DB8F58300087920 /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		048625E81DB798B700596733 /* DYZBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DYZBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		048625EC1DB798B700596733 /* DYZBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DYZBUITests.swift; sourceTree = "<group>"; };
 		048625EE1DB798B700596733 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04A97C211DB8EBFD00087920 /* DYPageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYPageTitleView.swift; sourceTree = "<group>"; };
+		04A97C231DB8F58300087920 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +254,7 @@
 		04465F4A1DB88FC400ECFF66 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04A97C211DB8EBFD00087920 /* DYPageTitleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				04465F521DB88FC400ECFF66 /* Extension */,
+				04A97C231DB8F58300087920 /* Common.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -509,6 +515,8 @@
 				04465F601DB8A14300ECFF66 /* DYMainViewController.swift in Sources */,
 				048625CD1DB798B600596733 /* AppDelegate.swift in Sources */,
 				04465F681DB8C04600ECFF66 /* UIBarButtonItem-Extension.swift in Sources */,
+				04A97C221DB8EBFD00087920 /* DYPageTitleView.swift in Sources */,
+				04A97C241DB8F58300087920 /* Common.swift in Sources */,
 				04465F621DB8B04000ECFF66 /* DYHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
