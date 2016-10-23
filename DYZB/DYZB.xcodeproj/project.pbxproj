@@ -22,6 +22,8 @@
 		048625ED1DB798B700596733 /* DYZBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048625EC1DB798B700596733 /* DYZBUITests.swift */; };
 		04A97C221DB8EBFD00087920 /* DYPageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A97C211DB8EBFD00087920 /* DYPageTitleView.swift */; };
 		04A97C241DB8F58300087920 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A97C231DB8F58300087920 /* Common.swift */; };
+		04FDC3201DBCB5AE00BD4C39 /* DYPageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FDC31F1DBCB5AD00BD4C39 /* DYPageContentView.swift */; };
+		04FDC3221DBCBF9100BD4C39 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FDC3211DBCBF9100BD4C39 /* UIColor-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		048625EE1DB798B700596733 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04A97C211DB8EBFD00087920 /* DYPageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYPageTitleView.swift; sourceTree = "<group>"; };
 		04A97C231DB8F58300087920 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		04FDC31F1DBCB5AD00BD4C39 /* DYPageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYPageContentView.swift; sourceTree = "<group>"; };
+		04FDC3211DBCBF9100BD4C39 /* UIColor-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				04A97C211DB8EBFD00087920 /* DYPageTitleView.swift */,
+				04FDC31F1DBCB5AD00BD4C39 /* DYPageContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -319,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				04465F671DB8C04600ECFF66 /* UIBarButtonItem-Extension.swift */,
+				04FDC3211DBCBF9100BD4C39 /* UIColor-Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -513,8 +519,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				04465F601DB8A14300ECFF66 /* DYMainViewController.swift in Sources */,
+				04FDC3221DBCBF9100BD4C39 /* UIColor-Extension.swift in Sources */,
 				048625CD1DB798B600596733 /* AppDelegate.swift in Sources */,
 				04465F681DB8C04600ECFF66 /* UIBarButtonItem-Extension.swift in Sources */,
+				04FDC3201DBCB5AE00BD4C39 /* DYPageContentView.swift in Sources */,
 				04A97C221DB8EBFD00087920 /* DYPageTitleView.swift in Sources */,
 				04A97C241DB8F58300087920 /* Common.swift in Sources */,
 				04465F621DB8B04000ECFF66 /* DYHomeViewController.swift in Sources */,

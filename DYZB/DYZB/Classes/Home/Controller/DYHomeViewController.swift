@@ -24,6 +24,27 @@ class DYHomeViewController: UIViewController {
         
         }()
     
+    fileprivate lazy var pageContentView : DYPageContentView = {[weak self] in
+        
+        // 1.确定内容的frame
+        let contentH = kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH - kTabBarH
+        let contentFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH + kTitleViewH, width: kScreenW, height: contentH)
+        
+        
+        // 2.确定所有的子控制器
+        var childVCs = [UIViewController]()
+        for _ in 0..<4 {
+            let vc = UIViewController()
+            vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
+            
+            childVCs.append(vc)
+        }
+        
+        let contentView = DYPageContentView(frame: contentFrame, childVcs: childVCs, parentViewController: self)
+        
+        return contentView
+    }()
+    
     // MARK: -系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,11 +64,16 @@ extension DYHomeViewController {
         // 不需要调整scrollView的内边距
         automaticallyAdjustsScrollViewInsets = false
         
-        // 设置导航栏
+        // 1.设置导航栏
         setupNavBarItem2()
         
-        // 添加titleView
+        // 2.添加titleView
         view.addSubview(pageTitleView)
+        
+        // 3.添加ContenView
+        view.addSubview(pageContentView)
+        pageContentView.backgroundColor = UIColor.red
+    
     }
     
     // 直接设置的方法(low)
@@ -93,17 +119,17 @@ extension DYHomeViewController {
     Swift也是类似，只是Swift使用extension，表示对系统的类进行扩充
      */
     private func setupNavBarItem1() {
-        let size = CGSize(width: 36, height: 36)
+//        let size = CGSize(width: 36, height: 36)
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem.creatBarButtonItem(image: "logo")
-        
-        let historyItem = UIBarButtonItem.creatBarButtonItem(image: "image_my_history", higlighted: "Image_my_history_click", size: size)
-        
-        let searchItem = UIBarButtonItem.creatBarButtonItem(image: "btn_search", higlighted: "btn_search_clicked", size: size)
-        
-        let qrcodeItem = UIBarButtonItem.creatBarButtonItem(image: "Image_scan", higlighted: "Image_scan_click", size: size)
-        
-        navigationItem.rightBarButtonItems = [historyItem, searchItem, qrcodeItem]
+//        navigationItem.leftBarButtonItem = UIBarButtonItem.creatBarButtonItem(image: "logo")
+//        
+//        let historyItem = UIBarButtonItem.creatBarButtonItem(image: "image_my_history", higlighted: "Image_my_history_click", size: size)
+//        
+//        let searchItem = UIBarButtonItem.creatBarButtonItem(image: "btn_search", higlighted: "btn_search_clicked", size: size)
+//        
+//        let qrcodeItem = UIBarButtonItem.creatBarButtonItem(image: "Image_scan", higlighted: "Image_scan_click", size: size)
+//        
+//        navigationItem.rightBarButtonItems = [historyItem, searchItem, qrcodeItem]
         
     }
     
@@ -116,17 +142,38 @@ extension DYHomeViewController {
      */
     private func setupNavBarItem2() {
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: "logo")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: "logo", target: self, action: #selector(self.leftItemClick))
         
         
         let size = CGSize(width: 36, height: 36)
-        let historyItem = UIBarButtonItem(image: "image_my_history", highlighted: "Image_my_history_click", size: size)
-        let searchItem = UIBarButtonItem(image: "btn_search", highlighted: "btn_search_clicked", size: size)
-        let qrcodeItem = UIBarButtonItem(image: "Image_scan", highlighted: "Image_scan_click", size: size)
+        
+        let historyItem = UIBarButtonItem(image: "image_my_history", highlighted: "Image_my_history_click", size: size, target: self, action: #selector(self.historyItemClick))
+        
+        let searchItem = UIBarButtonItem(image: "btn_search", highlighted: "btn_search_clicked", size: size, target: self, action: #selector(self.searchItemClick))
+        
+        let qrcodeItem = UIBarButtonItem(image: "Image_scan", highlighted: "btn_search_clicked", size: size, target: self, action: #selector(self.qrcodeItemClick))
         
         navigationItem.rightBarButtonItems = [historyItem, searchItem, qrcodeItem]
         
         
         
+    }
+    
+    // 导航栏的事件处理
+    
+    @objc private func leftItemClick() {
+        print("点击了logo")
+    }
+    
+    @objc private func historyItemClick() {
+        print("点击了历史")
+    }
+    
+    @objc private func searchItemClick() {
+        print("点击了搜索")
+    }
+    
+    @objc private func qrcodeItemClick() {
+        print("点击了二维码")
     }
 }
