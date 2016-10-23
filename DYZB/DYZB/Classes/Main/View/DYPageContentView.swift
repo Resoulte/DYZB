@@ -89,3 +89,12 @@ extension DYPageContentView : UICollectionViewDataSource {
         return cell
     }
 }
+
+// MARK: -对外暴露的方法
+extension DYPageContentView {
+    func setCurrentIndex(_ currentIndex: Int) {
+        
+        let offsetX = CGFloat(currentIndex) * collectionView.frame.width
+        collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: false)
+    }
+}

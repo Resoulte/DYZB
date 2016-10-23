@@ -14,12 +14,12 @@ let kTitleViewH : CGFloat = 40.0
 class DYHomeViewController: UIViewController {
 
     // MARK: -懒加载属性
-    fileprivate lazy var pageTitleView :DYPageTitleView = {
+    fileprivate lazy var pageTitleView :DYPageTitleView = {[weak self] in
         
         let titleFrame = CGRect(x: 0.0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kTitleViewH)
         let titles = ["推荐", "游戏", "娱乐", "趣玩"]
         let titleView = DYPageTitleView(frame: titleFrame, titles: titles)
-        
+        titleView.delegate = self
         return titleView
         
         }()
@@ -176,4 +176,13 @@ extension DYHomeViewController {
     @objc private func qrcodeItemClick() {
         print("点击了二维码")
     }
+}
+
+// MARK: -PageTitleViewDelegate
+extension DYHomeViewController : PageTitleViewDelegate {
+    func pageTitleView(_ titleView: DYPageTitleView, selectedIndex index: Int) {
+        
+        pageContentView.setCurrentIndex(index)
+    }
+    
 }

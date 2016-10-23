@@ -8,6 +8,11 @@
 
 import UIKit
 
+// MARK: - 定义协议
+protocol PageTitleViewDelegate : class {
+    func pageTitleView(_ titleView: DYPageTitleView, selectedIndex index: Int)
+}
+
 // MARK: - 定义常量
 private let kScrollLineH : CGFloat = 2
 private let kSelectColor : (CGFloat, CGFloat, CGFloat) = (255, 128, 0)
@@ -16,7 +21,9 @@ private let kSelectColor : (CGFloat, CGFloat, CGFloat) = (255, 128, 0)
 class DYPageTitleView: UIView {
     
     // MARK: - 定义属性
+    fileprivate var currentIndx : Int = 0
     fileprivate var titles : [String]
+    weak var delegate : PageTitleViewDelegate?
     
     // MARK: - 懒加载属性
     fileprivate lazy var titleLables : [UILabel] = [UILabel]()
@@ -91,6 +98,11 @@ extension DYPageTitleView {
             scrollView.addSubview(lable)
             titleLables.append(lable)
             
+            // 5.给lable添加手势
+            lable.isUserInteractionEnabled = true
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(self.titleLableClick(_:)))
+            lable.addGestureRecognizer(gesture)
+            
         }
     }
     
@@ -117,6 +129,40 @@ extension DYPageTitleView {
         scrollLine.frame = CGRect(x: firstLable.frame.origin.x, y: frame.height - kScrollLineH, width: firstLable.frame.width, height: kScrollLineH)
         
         
+        
+    }
+}
+
+// MARK: -监听lable的点击
+extension DYPageTitleView {
+    
+    @objc func titleLableClick(_ tapsGesture: UITapGestureRecognizer) {
+        // 1.获取当前lable 
+        guard let currentLable = tapsGesture.view as? UILabel else {return}
+        
+        // 2.如果重复点击的是同一个lable那么直接返回
+        if  currentLable.tag == currentIndx {
+            return
+        }
+        
+        // 3.获取之前的lable
+        let oldLabe = titleLables[currentIndx]
+        
+        // 4.切换文字的颜色
+        currentLable.textColor = UIColor.orange
+        oldLabe.textColor = UIColor.darkGray
+        
+        // 5.保存lable的最新下标值
+        currentIndx = currentLable.tag
+        
+        // 6.滚动条位置发生变化
+        let scrollLineX = CGFloat(currentIndx) * scrollLine.frame.width
+        UIView.animate(withDuration: 0.25, animations: { 
+            self.scrollLine.frame.origin.x = scrollLineX
+            }, completion: nil)
+        
+        // 7.通知代理
+        delegate?.pageTitleView(self, selectedIndex: currentIndx)
         
     }
 }
