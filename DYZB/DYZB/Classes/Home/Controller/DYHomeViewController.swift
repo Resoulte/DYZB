@@ -41,7 +41,7 @@ class DYHomeViewController: UIViewController {
         }
         
         let contentView = DYPageContentView(frame: contentFrame, childVcs: childVCs, parentViewController: self)
-        
+        contentView.delegate = self
         return contentView
     }()
     
@@ -185,4 +185,13 @@ extension DYHomeViewController : PageTitleViewDelegate {
         pageContentView.setCurrentIndex(index)
     }
     
+}
+
+// MARK: -PageContentViewDelegate
+extension DYHomeViewController : PageContentViewDelegate {
+    
+    func pageContentView(contentView: DYPageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        
+        pageTitleView.setTitleView(progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+    }
 }
