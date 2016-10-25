@@ -141,10 +141,10 @@ extension DYPageContentView : UICollectionViewDelegate {
         } else { // 右滑
             
             // 1.计算progress
-            progress = 1 - (currentOffsetX / startoffsetX - floor(currentOffsetX / startoffsetX))
+            progress = 1 - (currentOffsetX / scrollViewW - floor(currentOffsetX / scrollViewW))
             
             // 2.计算targetIndex
-            targetIndex = Int(currentOffsetX / startoffsetX)
+            targetIndex = Int(currentOffsetX / scrollViewW)
             
             // 3.计算sourceIndex
             sourceIndex = targetIndex + 1
