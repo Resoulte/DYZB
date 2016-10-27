@@ -15,6 +15,8 @@
 		04465F621DB8B04000ECFF66 /* DYHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04465F611DB8B04000ECFF66 /* DYHomeViewController.swift */; };
 		04465F681DB8C04600ECFF66 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04465F671DB8C04600ECFF66 /* UIBarButtonItem-Extension.swift */; };
 		0448DCD81DC0ECB000E6802B /* DYRecommendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448DCD71DC0ECB000E6802B /* DYRecommendController.swift */; };
+		0448DCDB1DC1070700E6802B /* DYHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448DCD91DC1070600E6802B /* DYHeaderCollectionReusableView.swift */; };
+		0448DCDC1DC1070700E6802B /* DYHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0448DCDA1DC1070600E6802B /* DYHeaderCollectionReusableView.xib */; };
 		048625CD1DB798B600596733 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048625CC1DB798B600596733 /* AppDelegate.swift */; };
 		048625D21DB798B700596733 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048625D01DB798B700596733 /* Main.storyboard */; };
 		048625D41DB798B700596733 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048625D31DB798B700596733 /* Assets.xcassets */; };
@@ -23,6 +25,10 @@
 		048625ED1DB798B700596733 /* DYZBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048625EC1DB798B700596733 /* DYZBUITests.swift */; };
 		04A97C221DB8EBFD00087920 /* DYPageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A97C211DB8EBFD00087920 /* DYPageTitleView.swift */; };
 		04A97C241DB8F58300087920 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A97C231DB8F58300087920 /* Common.swift */; };
+		04D8001E1DC1DC4000DDBC75 /* DYNormalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8001C1DC1DC3F00DDBC75 /* DYNormalCollectionViewCell.swift */; };
+		04D8001F1DC1DC4000DDBC75 /* DYNormalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D8001D1DC1DC4000DDBC75 /* DYNormalCollectionViewCell.xib */; };
+		04D800221DC1E64700DDBC75 /* DYPrettyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D800201DC1E64700DDBC75 /* DYPrettyCollectionViewCell.swift */; };
+		04D800231DC1E64700DDBC75 /* DYPrettyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D800211DC1E64700DDBC75 /* DYPrettyCollectionViewCell.xib */; };
 		04FDC3201DBCB5AE00BD4C39 /* DYPageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FDC31F1DBCB5AD00BD4C39 /* DYPageContentView.swift */; };
 		04FDC3221DBCBF9100BD4C39 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FDC3211DBCBF9100BD4C39 /* UIColor-Extension.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +59,8 @@
 		04465F611DB8B04000ECFF66 /* DYHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYHomeViewController.swift; sourceTree = "<group>"; };
 		04465F671DB8C04600ECFF66 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		0448DCD71DC0ECB000E6802B /* DYRecommendController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYRecommendController.swift; sourceTree = "<group>"; };
+		0448DCD91DC1070600E6802B /* DYHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		0448DCDA1DC1070600E6802B /* DYHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DYHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		048625C91DB798B600596733 /* DYZB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYZB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048625CC1DB798B600596733 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		048625D11DB798B700596733 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,6 +75,10 @@
 		048625EE1DB798B700596733 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04A97C211DB8EBFD00087920 /* DYPageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYPageTitleView.swift; sourceTree = "<group>"; };
 		04A97C231DB8F58300087920 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		04D8001C1DC1DC3F00DDBC75 /* DYNormalCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYNormalCollectionViewCell.swift; sourceTree = "<group>"; };
+		04D8001D1DC1DC4000DDBC75 /* DYNormalCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DYNormalCollectionViewCell.xib; sourceTree = "<group>"; };
+		04D800201DC1E64700DDBC75 /* DYPrettyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYPrettyCollectionViewCell.swift; sourceTree = "<group>"; };
+		04D800211DC1E64700DDBC75 /* DYPrettyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DYPrettyCollectionViewCell.xib; sourceTree = "<group>"; };
 		04FDC31F1DBCB5AD00BD4C39 /* DYPageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYPageContentView.swift; sourceTree = "<group>"; };
 		04FDC3211DBCBF9100BD4C39 /* UIColor-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,6 +192,8 @@
 		04465F401DB88FC400ECFF66 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0448DCD91DC1070600E6802B /* DYHeaderCollectionReusableView.swift */,
+				0448DCDA1DC1070600E6802B /* DYHeaderCollectionReusableView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -263,6 +277,10 @@
 			children = (
 				04A97C211DB8EBFD00087920 /* DYPageTitleView.swift */,
 				04FDC31F1DBCB5AD00BD4C39 /* DYPageContentView.swift */,
+				04D8001C1DC1DC3F00DDBC75 /* DYNormalCollectionViewCell.swift */,
+				04D8001D1DC1DC4000DDBC75 /* DYNormalCollectionViewCell.xib */,
+				04D800201DC1E64700DDBC75 /* DYPrettyCollectionViewCell.swift */,
+				04D800211DC1E64700DDBC75 /* DYPrettyCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -495,8 +513,11 @@
 				048625D21DB798B700596733 /* Main.storyboard in Resources */,
 				04465F581DB89DDB00ECFF66 /* Live.storyboard in Resources */,
 				04465F551DB89CEC00ECFF66 /* Home.storyboard in Resources */,
+				04D800231DC1E64700DDBC75 /* DYPrettyCollectionViewCell.xib in Resources */,
+				04D8001F1DC1DC4000DDBC75 /* DYNormalCollectionViewCell.xib in Resources */,
 				04465F5E1DB89E2000ECFF66 /* Profile.storyboard in Resources */,
 				04465F5B1DB89E0000ECFF66 /* Follow.storyboard in Resources */,
+				0448DCDC1DC1070700E6802B /* DYHeaderCollectionReusableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,9 +544,12 @@
 			files = (
 				04465F601DB8A14300ECFF66 /* DYMainViewController.swift in Sources */,
 				04FDC3221DBCBF9100BD4C39 /* UIColor-Extension.swift in Sources */,
+				04D8001E1DC1DC4000DDBC75 /* DYNormalCollectionViewCell.swift in Sources */,
 				048625CD1DB798B600596733 /* AppDelegate.swift in Sources */,
 				04465F681DB8C04600ECFF66 /* UIBarButtonItem-Extension.swift in Sources */,
 				04FDC3201DBCB5AE00BD4C39 /* DYPageContentView.swift in Sources */,
+				04D800221DC1E64700DDBC75 /* DYPrettyCollectionViewCell.swift in Sources */,
+				0448DCDB1DC1070700E6802B /* DYHeaderCollectionReusableView.swift in Sources */,
 				04A97C221DB8EBFD00087920 /* DYPageTitleView.swift in Sources */,
 				0448DCD81DC0ECB000E6802B /* DYRecommendController.swift in Sources */,
 				04A97C241DB8F58300087920 /* Common.swift in Sources */,
