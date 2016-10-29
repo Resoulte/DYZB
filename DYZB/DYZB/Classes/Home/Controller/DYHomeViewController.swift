@@ -52,10 +52,14 @@ class DYHomeViewController: UIViewController {
         
         // 设置UI界面
         setupUI()
+        
+     
     }
     
     
 }
+
+
 
 // MARK: -设置UI界面
 extension DYHomeViewController {

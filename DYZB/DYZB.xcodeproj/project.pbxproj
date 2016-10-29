@@ -17,6 +17,9 @@
 		0448DCD81DC0ECB000E6802B /* DYRecommendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448DCD71DC0ECB000E6802B /* DYRecommendController.swift */; };
 		0448DCDB1DC1070700E6802B /* DYHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448DCD91DC1070600E6802B /* DYHeaderCollectionReusableView.swift */; };
 		0448DCDC1DC1070700E6802B /* DYHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0448DCDA1DC1070600E6802B /* DYHeaderCollectionReusableView.xib */; };
+		046831E21DC49172003E5D6E /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046831E11DC49172003E5D6E /* NSDate-Extension.swift */; };
+		046831E41DC4A633003E5D6E /* DYAnchorGroupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046831E31DC4A632003E5D6E /* DYAnchorGroupItem.swift */; };
+		046831E61DC4AD6E003E5D6E /* DYAnchorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046831E51DC4AD6E003E5D6E /* DYAnchorItem.swift */; };
 		048625CD1DB798B600596733 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048625CC1DB798B600596733 /* AppDelegate.swift */; };
 		048625D21DB798B700596733 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048625D01DB798B700596733 /* Main.storyboard */; };
 		048625D41DB798B700596733 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048625D31DB798B700596733 /* Assets.xcassets */; };
@@ -29,8 +32,11 @@
 		04D8001F1DC1DC4000DDBC75 /* DYNormalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D8001D1DC1DC4000DDBC75 /* DYNormalCollectionViewCell.xib */; };
 		04D800221DC1E64700DDBC75 /* DYPrettyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D800201DC1E64700DDBC75 /* DYPrettyCollectionViewCell.swift */; };
 		04D800231DC1E64700DDBC75 /* DYPrettyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D800211DC1E64700DDBC75 /* DYPrettyCollectionViewCell.xib */; };
+		04D800261DC1F9C200DDBC75 /* DYNetWorksTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D800251DC1F9C200DDBC75 /* DYNetWorksTools.swift */; };
+		04D800291DC203E100DDBC75 /* DYRecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D800281DC203E100DDBC75 /* DYRecommendViewModel.swift */; };
 		04FDC3201DBCB5AE00BD4C39 /* DYPageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FDC31F1DBCB5AD00BD4C39 /* DYPageContentView.swift */; };
 		04FDC3221DBCBF9100BD4C39 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FDC3211DBCBF9100BD4C39 /* UIColor-Extension.swift */; };
+		AE5BD59C2B676E41D4D16DE5 /* Pods_DYZB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C72586DD23D9CC354F44E47 /* Pods_DYZB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +67,9 @@
 		0448DCD71DC0ECB000E6802B /* DYRecommendController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYRecommendController.swift; sourceTree = "<group>"; };
 		0448DCD91DC1070600E6802B /* DYHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		0448DCDA1DC1070600E6802B /* DYHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DYHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
+		046831E11DC49172003E5D6E /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
+		046831E31DC4A632003E5D6E /* DYAnchorGroupItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYAnchorGroupItem.swift; sourceTree = "<group>"; };
+		046831E51DC4AD6E003E5D6E /* DYAnchorItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYAnchorItem.swift; sourceTree = "<group>"; };
 		048625C91DB798B600596733 /* DYZB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYZB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048625CC1DB798B600596733 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		048625D11DB798B700596733 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,8 +88,15 @@
 		04D8001D1DC1DC4000DDBC75 /* DYNormalCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DYNormalCollectionViewCell.xib; sourceTree = "<group>"; };
 		04D800201DC1E64700DDBC75 /* DYPrettyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYPrettyCollectionViewCell.swift; sourceTree = "<group>"; };
 		04D800211DC1E64700DDBC75 /* DYPrettyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DYPrettyCollectionViewCell.xib; sourceTree = "<group>"; };
+		04D800251DC1F9C200DDBC75 /* DYNetWorksTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYNetWorksTools.swift; sourceTree = "<group>"; };
+		04D800281DC203E100DDBC75 /* DYRecommendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYRecommendViewModel.swift; sourceTree = "<group>"; };
 		04FDC31F1DBCB5AD00BD4C39 /* DYPageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYPageContentView.swift; sourceTree = "<group>"; };
 		04FDC3211DBCBF9100BD4C39 /* UIColor-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
+		12522DA3747A1C940B88B731 /* Pods-DYZB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZB.release.xcconfig"; path = "Pods/Target Support Files/Pods-DYZB/Pods-DYZB.release.xcconfig"; sourceTree = "<group>"; };
+		1C72586DD23D9CC354F44E47 /* Pods_DYZB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DYZB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53C717714162E8967C1D8384 /* Pods-DYZB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DYZB/Pods-DYZB.debug.xcconfig"; sourceTree = "<group>"; };
+		90DF58877018B220F79B9351 /* Pods_DYZBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DYZBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6934730006058B274FFE90B /* Pods_DYZBUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DYZBUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE5BD59C2B676E41D4D16DE5 /* Pods_DYZB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,9 +181,9 @@
 		04465F3D1DB88FC400ECFF66 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				04465F3E1DB88FC400ECFF66 /* Controller */,
 				04465F3F1DB88FC400ECFF66 /* Model */,
 				04465F401DB88FC400ECFF66 /* View */,
+				04465F3E1DB88FC400ECFF66 /* Controller */,
 				04465F411DB88FC400ECFF66 /* ViewModel */,
 			);
 			path = Home;
@@ -201,6 +218,7 @@
 		04465F411DB88FC400ECFF66 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				04D800281DC203E100DDBC75 /* DYRecommendViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -268,6 +286,8 @@
 		04465F491DB88FC400ECFF66 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				046831E31DC4A632003E5D6E /* DYAnchorGroupItem.swift */,
+				046831E51DC4AD6E003E5D6E /* DYAnchorItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -337,6 +357,7 @@
 			children = (
 				04465F521DB88FC400ECFF66 /* Extension */,
 				04A97C231DB8F58300087920 /* Common.swift */,
+				04D800251DC1F9C200DDBC75 /* DYNetWorksTools.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -346,6 +367,7 @@
 			children = (
 				04465F671DB8C04600ECFF66 /* UIBarButtonItem-Extension.swift */,
 				04FDC3211DBCBF9100BD4C39 /* UIColor-Extension.swift */,
+				046831E11DC49172003E5D6E /* NSDate-Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -357,6 +379,8 @@
 				048625E01DB798B700596733 /* DYZBTests */,
 				048625EB1DB798B700596733 /* DYZBUITests */,
 				048625CA1DB798B600596733 /* Products */,
+				A70508E2E12839E547A55C8F /* Pods */,
+				79C8D3EA2B594342D88593F8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -400,6 +424,25 @@
 			path = DYZBUITests;
 			sourceTree = "<group>";
 		};
+		79C8D3EA2B594342D88593F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C72586DD23D9CC354F44E47 /* Pods_DYZB.framework */,
+				90DF58877018B220F79B9351 /* Pods_DYZBTests.framework */,
+				A6934730006058B274FFE90B /* Pods_DYZBUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A70508E2E12839E547A55C8F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				53C717714162E8967C1D8384 /* Pods-DYZB.debug.xcconfig */,
+				12522DA3747A1C940B88B731 /* Pods-DYZB.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -407,9 +450,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 048625F11DB798B700596733 /* Build configuration list for PBXNativeTarget "DYZB" */;
 			buildPhases = (
+				ADE1D556D7AB475DBA8A58AE /* [CP] Check Pods Manifest.lock */,
 				048625C51DB798B600596733 /* Sources */,
 				048625C61DB798B600596733 /* Frameworks */,
 				048625C71DB798B600596733 /* Resources */,
+				A83EAA5685926BE4223B4BAF /* [CP] Embed Pods Frameworks */,
+				FB8BE7C085F087851AC5CAAF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -537,6 +583,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A83EAA5685926BE4223B4BAF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DYZB/Pods-DYZB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADE1D556D7AB475DBA8A58AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FB8BE7C085F087851AC5CAAF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DYZB/Pods-DYZB-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		048625C51DB798B600596733 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -548,11 +642,16 @@
 				048625CD1DB798B600596733 /* AppDelegate.swift in Sources */,
 				04465F681DB8C04600ECFF66 /* UIBarButtonItem-Extension.swift in Sources */,
 				04FDC3201DBCB5AE00BD4C39 /* DYPageContentView.swift in Sources */,
+				046831E41DC4A633003E5D6E /* DYAnchorGroupItem.swift in Sources */,
 				04D800221DC1E64700DDBC75 /* DYPrettyCollectionViewCell.swift in Sources */,
 				0448DCDB1DC1070700E6802B /* DYHeaderCollectionReusableView.swift in Sources */,
+				04D800291DC203E100DDBC75 /* DYRecommendViewModel.swift in Sources */,
+				04D800261DC1F9C200DDBC75 /* DYNetWorksTools.swift in Sources */,
+				046831E21DC49172003E5D6E /* NSDate-Extension.swift in Sources */,
 				04A97C221DB8EBFD00087920 /* DYPageTitleView.swift in Sources */,
 				0448DCD81DC0ECB000E6802B /* DYRecommendController.swift in Sources */,
 				04A97C241DB8F58300087920 /* Common.swift in Sources */,
+				046831E61DC4AD6E003E5D6E /* DYAnchorItem.swift in Sources */,
 				04465F621DB8B04000ECFF66 /* DYHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -738,11 +837,12 @@
 		};
 		048625F21DB798B700596733 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53C717714162E8967C1D8384 /* Pods-DYZB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = DYZB/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xunji.DYZB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -752,11 +852,12 @@
 		};
 		048625F31DB798B700596733 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12522DA3747A1C940B88B731 /* Pods-DYZB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = DYZB/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xunji.DYZB;
 				PRODUCT_NAME = "$(TARGET_NAME)";

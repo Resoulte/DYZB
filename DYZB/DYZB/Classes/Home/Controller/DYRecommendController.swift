@@ -23,6 +23,7 @@ private let kHeaderID = "headerID"
 class DYRecommendController: UIViewController {
 
     // MARK: -懒加载
+    lazy var recommendVM = DYRecommendViewModel()
     lazy var collection: UICollectionView = { [weak self] in
         
         let flow = UICollectionViewFlowLayout()
@@ -58,17 +59,27 @@ class DYRecommendController: UIViewController {
         
         setupUI()
         
+        // 发送网络请求
+        loadData()
     }
 
 }
 
-// MARK: -设置UI界面
+// MARK: - 设置UI界面
 extension DYRecommendController {
     
    fileprivate func setupUI() {
         // 1.将UICollectionView加入控制器view当中
         view.addSubview(collection)
     }
+}
+
+// MARK: - 请求数据
+extension DYRecommendController {
+    fileprivate func loadData() {
+        recommendVM.requestData()
+    }
+    
 }
 
 extension DYRecommendController : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
