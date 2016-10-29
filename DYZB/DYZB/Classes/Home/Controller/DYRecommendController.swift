@@ -77,7 +77,9 @@ extension DYRecommendController {
 // MARK: - 请求数据
 extension DYRecommendController {
     fileprivate func loadData() {
-        recommendVM.requestData()
+        recommendVM.requestData {
+            self.collection.reloadData()
+        }
     }
     
 }
@@ -86,16 +88,13 @@ extension DYRecommendController : UICollectionViewDataSource, UICollectionViewDe
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         
-        return 12
+        return recommendVM.anchorGroups.count
     }
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return 8
-        } else {
-            return 4
-        }
+        let group = recommendVM.anchorGroups[section]
+        return group.anchors.count
         
     }
     
@@ -114,9 +113,11 @@ extension DYRecommendController : UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderID, for: indexPath)
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderID, for: indexPath) as! DYHeaderCollectionReusableView
         
-//        headerView.backgroundColor = UIColor.brown
+        headerView.group = recommendVM.anchorGroups[indexPath.section]
+        
+
                
         return headerView
     }

@@ -30,6 +30,10 @@ class DYAnchorGroupItem: NSObject {
     lazy var anchors = [DYAnchorItem]()
     
     
+    override init() {
+        
+    }
+    
     init(dict : [String : Any]) {
         super.init()
         

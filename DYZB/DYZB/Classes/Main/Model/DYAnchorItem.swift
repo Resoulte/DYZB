@@ -22,6 +22,10 @@ class DYAnchorItem: NSObject {
     var nickname = ""
     /// 观看人数
     var online = 0
+    /// 所在城市
+    var anchor_city = ""
+    
+    
     
     init(dict: [String : Any]) {
         super.init()
