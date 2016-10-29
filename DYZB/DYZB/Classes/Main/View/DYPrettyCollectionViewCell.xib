@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -38,32 +38,39 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="66666在线" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9B5-O7-FKI">
-                        <color key="backgroundColor" white="0.0" alpha="0.40608836206896554" colorSpace="calibratedWhite"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyy-Kg-1WP">
+                        <color key="backgroundColor" red="0.073637820512820529" green="0.073637820512820529" blue="0.073637820512820529" alpha="0.29989224137931036" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="70" id="GzY-xj-1ZX"/>
-                            <constraint firstAttribute="height" constant="16" id="pNN-Ah-n87"/>
+                            <constraint firstAttribute="height" constant="20" id="0cA-Qy-d0F"/>
+                            <constraint firstAttribute="width" constant="74" id="Nvc-sB-Ty8"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <state key="normal" title="66666在线">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="Pxq-pk-Ast" firstAttribute="top" secondItem="zwg-QA-bV7" secondAttribute="bottom" constant="5" id="7vT-RZ-bhT"/>
                 <constraint firstItem="Pxq-pk-Ast" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="CiQ-yL-aOP"/>
+                <constraint firstItem="pyy-Kg-1WP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="topMargin" id="ESs-W2-elO"/>
                 <constraint firstAttribute="trailing" secondItem="zwg-QA-bV7" secondAttribute="trailing" constant="5" id="Luv-I0-ZLy"/>
-                <constraint firstItem="9B5-O7-FKI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="OW1-2g-jCb"/>
                 <constraint firstItem="zwg-QA-bV7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="OyR-9i-cYs"/>
                 <constraint firstItem="HiX-9g-2nB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Pma-zR-QUO"/>
                 <constraint firstAttribute="trailing" secondItem="HiX-9g-2nB" secondAttribute="trailing" id="TFb-hv-dFh"/>
                 <constraint firstItem="zwg-QA-bV7" firstAttribute="top" secondItem="HiX-9g-2nB" secondAttribute="bottom" constant="5" id="YTC-xn-5gi"/>
                 <constraint firstAttribute="bottom" secondItem="Pxq-pk-Ast" secondAttribute="bottom" constant="6" id="d4d-jc-bqa"/>
-                <constraint firstAttribute="trailing" secondItem="9B5-O7-FKI" secondAttribute="trailing" constant="5" id="pzs-6d-x7G"/>
+                <constraint firstItem="pyy-Kg-1WP" firstAttribute="trailing" secondItem="gTV-IL-0wX" secondAttribute="trailingMargin" id="h8c-Az-6T9"/>
                 <constraint firstItem="HiX-9g-2nB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xKN-tx-kUh"/>
             </constraints>
             <size key="customSize" width="210" height="245"/>
+            <connections>
+                <outlet property="cityName" destination="Pxq-pk-Ast" id="jcX-Fu-kos"/>
+                <outlet property="iconImageView" destination="HiX-9g-2nB" id="RTz-nU-eX7"/>
+                <outlet property="nickName" destination="zwg-QA-bV7" id="qcU-gS-0yE"/>
+                <outlet property="onlinename" destination="pyy-Kg-1WP" id="EkL-oT-c2x"/>
+            </connections>
             <point key="canvasLocation" x="-6" y="51.5"/>
         </collectionViewCell>
     </objects>
