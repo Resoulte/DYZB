@@ -106,6 +106,9 @@ extension DYRecommendController {
     fileprivate func loadData() {
         recommendVM.requestData {
             self.collection.reloadData()
+            
+            // 将数据传给gameView
+            self.gameView.groups = self.recommendVM.anchorGroups
         }
     }
     

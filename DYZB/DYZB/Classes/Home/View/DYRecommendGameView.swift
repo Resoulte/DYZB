@@ -9,9 +9,33 @@
 import UIKit
 
 private let kGameCellID = "kGameCellID"
+private let kEdgeInset : CGFloat = 10
 
 class DYRecommendGameView: UIView {
 
+    // MARK: - 定义数据属性
+    var groups : [DYAnchorGroupItem]? {
+        didSet {
+            
+            // 1.移除前两组数据
+            groups?.removeFirst()
+            groups?.removeFirst()
+            
+            // 添加更多
+            let moreGroup = DYAnchorGroupItem()
+            moreGroup.tag_name = "更多"
+            groups?.append(moreGroup)
+            
+            
+            // 2.刷新表格
+            CollectionView.reloadData()
+            
+        }
+        
+        
+    }
+    
+    
     @IBOutlet weak var CollectionView: UICollectionView!
     
     override func awakeFromNib() {
@@ -20,9 +44,7 @@ class DYRecommendGameView: UIView {
         autoresizingMask = UIViewAutoresizing()
         
         // 注册cell
-//        UINib(nibName: "", bundle: nil)
-        CollectionView.register(UICollectionViewCell
-            .self, forCellWithReuseIdentifier: kGameCellID)
+        CollectionView.register( UINib(nibName: "DYCollectionGameCell", bundle: nil), forCellWithReuseIdentifier: kGameCellID)
     }
     
     override func layoutSubviews() {
@@ -32,6 +54,7 @@ class DYRecommendGameView: UIView {
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: 80, height: 90)
         CollectionView.showsHorizontalScrollIndicator = false
+        CollectionView.contentInset = UIEdgeInsets(top: 0, left: kEdgeInset, bottom: 0, right: kEdgeInset)
     }
 }
 
@@ -44,12 +67,15 @@ extension DYRecommendGameView {
 
 extension DYRecommendGameView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return groups?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameCellID, for: indexPath)
-        cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.blue
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameCellID, for: indexPath) as!DYCollectionGameCell
+        cell.group = groups?[indexPath.item]
+        
+        
+//        cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.blue
         
         return cell
     }

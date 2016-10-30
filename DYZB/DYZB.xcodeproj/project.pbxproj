@@ -11,6 +11,8 @@
 		0417E99B1DC5C71400ED375D /* DYCollectionCycleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0417E9991DC5C71300ED375D /* DYCollectionCycleCell.xib */; };
 		0417E99D1DC5D67700ED375D /* DYRecommendGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417E99C1DC5D67700ED375D /* DYRecommendGameView.swift */; };
 		0417E99F1DC5D69700ED375D /* DYRecommendGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0417E99E1DC5D69700ED375D /* DYRecommendGameView.xib */; };
+		0417E9A21DC5E9A000ED375D /* DYCollectionGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417E9A01DC5E9A000ED375D /* DYCollectionGameCell.swift */; };
+		0417E9A31DC5E9A000ED375D /* DYCollectionGameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0417E9A11DC5E9A000ED375D /* DYCollectionGameCell.xib */; };
 		04465F551DB89CEC00ECFF66 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04465F531DB89CEC00ECFF66 /* Home.storyboard */; };
 		04465F581DB89DDB00ECFF66 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04465F561DB89DDB00ECFF66 /* Live.storyboard */; };
 		04465F5B1DB89E0000ECFF66 /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04465F591DB89E0000ECFF66 /* Follow.storyboard */; };
@@ -68,6 +70,8 @@
 		0417E9991DC5C71300ED375D /* DYCollectionCycleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DYCollectionCycleCell.xib; sourceTree = "<group>"; };
 		0417E99C1DC5D67700ED375D /* DYRecommendGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYRecommendGameView.swift; sourceTree = "<group>"; };
 		0417E99E1DC5D69700ED375D /* DYRecommendGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DYRecommendGameView.xib; sourceTree = "<group>"; };
+		0417E9A01DC5E9A000ED375D /* DYCollectionGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYCollectionGameCell.swift; sourceTree = "<group>"; };
+		0417E9A11DC5E9A000ED375D /* DYCollectionGameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DYCollectionGameCell.xib; sourceTree = "<group>"; };
 		04465F541DB89CEC00ECFF66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB/Base.lproj/Home.storyboard; sourceTree = SOURCE_ROOT; };
 		04465F571DB89DDB00ECFF66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB/Base.lproj/Live.storyboard; sourceTree = SOURCE_ROOT; };
 		04465F5A1DB89E0000ECFF66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB/Base.lproj/Follow.storyboard; sourceTree = SOURCE_ROOT; };
@@ -232,6 +236,8 @@
 				0417E9991DC5C71300ED375D /* DYCollectionCycleCell.xib */,
 				0417E99C1DC5D67700ED375D /* DYRecommendGameView.swift */,
 				0417E99E1DC5D69700ED375D /* DYRecommendGameView.xib */,
+				0417E9A01DC5E9A000ED375D /* DYCollectionGameCell.swift */,
+				0417E9A11DC5E9A000ED375D /* DYCollectionGameCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -575,6 +581,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0417E9A31DC5E9A000ED375D /* DYCollectionGameCell.xib in Resources */,
 				048625D71DB798B700596733 /* LaunchScreen.storyboard in Resources */,
 				048625D41DB798B700596733 /* Assets.xcassets in Resources */,
 				048625D21DB798B700596733 /* Main.storyboard in Resources */,
@@ -678,6 +685,7 @@
 				0417E99A1DC5C71300ED375D /* DYCollectionCycleCell.swift in Sources */,
 				04A97C241DB8F58300087920 /* Common.swift in Sources */,
 				046831E61DC4AD6E003E5D6E /* DYAnchorItem.swift in Sources */,
+				0417E9A21DC5E9A000ED375D /* DYCollectionGameCell.swift in Sources */,
 				046831F01DC5A767003E5D6E /* DYCycleItem.swift in Sources */,
 				04465F621DB8B04000ECFF66 /* DYHomeViewController.swift in Sources */,
 				0417E99D1DC5D67700ED375D /* DYRecommendGameView.swift in Sources */,
