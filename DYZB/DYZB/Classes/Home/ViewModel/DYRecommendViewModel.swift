@@ -19,11 +19,13 @@ class DYRecommendViewModel {
      lazy var anchorGroups : [DYAnchorGroupItem] = [DYAnchorGroupItem]()
     fileprivate lazy var bigDataGroup = DYAnchorGroupItem()
     fileprivate lazy var prettyGroup = DYAnchorGroupItem()
+    lazy var cycleItems = [DYCycleItem]()
 }
 
 // MARK: - 发送网络请求
 extension DYRecommendViewModel {
     
+    // 请求推荐数据
     func requestData(finishedCallBack: @escaping () -> ())   {
         
         // 1.请求热门数据
@@ -113,6 +115,27 @@ extension DYRecommendViewModel {
         }
         
         
+    }
+    
+    // 请求无限轮播数据
+    func requestCycleData(finishedBack: @escaping () -> ()) {
+        DYNetWorksTools.requestJsonData(type: .get, URLString: "http://www.douyutv.com/api/v1/slide/6", params: ["version" : 2.300]) { (json) in
+            
+//            print(json)
+            // 1.获取字典数据
+            guard let jsonDict = json as? [String : Any] else { return }
+            
+            // 2.根据data的key获取数据
+            guard let dataArray = jsonDict["data"] as? [[String: Any]] else { return }
+            
+            print(dataArray)
+            // 3.字典转模型
+            for dict in dataArray {
+                self.cycleItems.append(DYCycleItem(dict: dict))
+            }
+            finishedBack()
+            
+        }
     }
 }
 

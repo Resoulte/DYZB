@@ -14,7 +14,7 @@ private let kItemW = (kScreenW - kMargain * 3) / 2
 private let kNormalItemH = kItemW * 3/4
 private let kPrettyItemH = kItemW * 4/3
 private let kHeaderH : CGFloat = 50
-
+private let kCycleViewH = kScreenW * 3 / 8
 private let kNormalID = "normalID"
 private let kPrettyID = "prettyID"
 private let kHeaderID = "headerID"
@@ -52,6 +52,13 @@ class DYRecommendController: UIViewController {
         return collection
     }()
     
+     lazy var cycleView : DYRecommendCycleView = {
+        
+        let cycleView = DYRecommendCycleView.recommendCycleView()
+        cycleView.frame = CGRect(x: 0, y: -kCycleViewH, width: kScreenW, height: kCycleViewH)
+        return cycleView
+        
+    }()
     // MARK: -系统回调的方法
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +68,8 @@ class DYRecommendController: UIViewController {
         
         // 发送网络请求
         loadData()
+        
+        loadCycleData()
     }
 
 }
@@ -71,14 +80,28 @@ extension DYRecommendController {
    fileprivate func setupUI() {
         // 1.将UICollectionView加入控制器view当中
         view.addSubview(collection)
+    
+        // 2.将cycleView加到collectionview
+        collection.addSubview(cycleView)
+    
+        // 3.设置collectionview的内边距
+        collection.contentInset = UIEdgeInsets(top: kCycleViewH, left: 0, bottom: 0, right: 0)
     }
 }
 
 // MARK: - 请求数据
 extension DYRecommendController {
+    // 请求推荐数据
     fileprivate func loadData() {
         recommendVM.requestData {
             self.collection.reloadData()
+        }
+    }
+    
+    // 请求轮播数据
+    fileprivate func loadCycleData() {
+        recommendVM.requestCycleData {
+            self.cycleView.cycleItems = self.recommendVM.cycleItems
         }
     }
     
