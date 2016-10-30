@@ -17,13 +17,22 @@ class DYRecommendCycleView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    // MARK: - 定义属性
+    var cycleTimer : Timer?
+    
     var cycleItems : [DYCycleItem]? {
         didSet {
             // 1.刷新collectionView
             collectionView.reloadData()
             // 2.设置pageControl的个数
             pageControl.numberOfPages = cycleItems?.count ?? 0
+            // 3.默认滚动到中间的某个位置
+            let index = NSIndexPath(item: (cycleItems?.count ?? 0)! * 100, section: 0)
+            collectionView.scrollToItem(at: index as IndexPath, at: .left, animated: false)
             
+            // 4.添加定时器
+            removeCycleTimer()
+            addCycleTimer()
         }
         
     }
@@ -62,16 +71,12 @@ extension DYRecommendCycleView {
 extension DYRecommendCycleView : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cycleItems?.count ?? 0
+        return (cycleItems?.count ?? 0) * 10000
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCycleCell, for: indexPath) as! DYCollectionCycleCell
-        cell.cycleItem = cycleItems?[indexPath.item]
-        
-        
-        cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.blue
-        
+        cell.cycleItem = cycleItems?[indexPath.item % (cycleItems?.count)!]
         return cell
     }
 }
@@ -83,6 +88,36 @@ extension DYRecommendCycleView : UICollectionViewDelegate {
         let contenoffsetX = scrollView.contentOffset.x + scrollView.bounds.width * 0.5
         
         // 计算pageControl的currentPage
-        pageControl.currentPage = Int(contenoffsetX / scrollView.bounds.width)
+        pageControl.currentPage = Int(contenoffsetX / scrollView.bounds.width) % (cycleItems?.count ?? 1)
     }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        removeCycleTimer()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        addCycleTimer()
+    }
+}
+
+extension DYRecommendCycleView {
+    fileprivate func addCycleTimer() {
+        cycleTimer = Timer(timeInterval: 2.0, target: self, selector: #selector(self.scrollNext), userInfo: nil, repeats: true)
+        RunLoop.main.add(cycleTimer!, forMode: .commonModes)
+    }
+    
+    fileprivate func removeCycleTimer() {
+        // 从运行循环中移除
+        cycleTimer?.invalidate()
+        cycleTimer = nil
+    }
+    
+    func scrollNext() {
+        let currentOffsetX = collectionView.contentOffset.x
+        let offsetX = currentOffsetX + collectionView.bounds.width
+        collectionView.setContentOffset(CGPoint(x:offsetX, y:0), animated: true)
+        
+        
+    }
+    
 }
