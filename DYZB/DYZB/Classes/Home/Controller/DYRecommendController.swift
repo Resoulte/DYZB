@@ -15,6 +15,7 @@ private let kNormalItemH = kItemW * 3/4
 private let kPrettyItemH = kItemW * 4/3
 private let kHeaderH : CGFloat = 50
 private let kCycleViewH = kScreenW * 3 / 8
+private let kGameViewH : CGFloat = 90.0
 private let kNormalID = "normalID"
 private let kPrettyID = "prettyID"
 private let kHeaderID = "headerID"
@@ -55,9 +56,16 @@ class DYRecommendController: UIViewController {
      lazy var cycleView : DYRecommendCycleView = {
         
         let cycleView = DYRecommendCycleView.recommendCycleView()
-        cycleView.frame = CGRect(x: 0, y: -kCycleViewH, width: kScreenW, height: kCycleViewH)
+        cycleView.frame = CGRect(x: 0, y: -(kCycleViewH + kGameViewH), width: kScreenW, height: kCycleViewH)
         return cycleView
         
+    }()
+    
+    lazy var gameView : DYRecommendGameView = {
+        let gameView = DYRecommendGameView.recommendGameView()
+        gameView.frame = CGRect(x: 0, y: -kGameViewH, width: kScreenW, height: kGameViewH)
+        
+        return gameView
     }()
     // MARK: -系统回调的方法
     override func viewDidLoad() {
@@ -84,8 +92,11 @@ extension DYRecommendController {
         // 2.将cycleView加到collectionview
         collection.addSubview(cycleView)
     
+        // 将gameView加到collectionview
+        collection.addSubview(gameView)
+    
         // 3.设置collectionview的内边距
-        collection.contentInset = UIEdgeInsets(top: kCycleViewH, left: 0, bottom: 0, right: 0)
+        collection.contentInset = UIEdgeInsets(top: kCycleViewH + kGameViewH, left: 0, bottom: 0, right: 0)
     }
 }
 
