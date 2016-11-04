@@ -13,10 +13,10 @@ class DYCollectionGameCell: UICollectionViewCell {
     @IBOutlet weak var iconGameView: UIImageView!
     @IBOutlet weak var titleLable: UILabel!
     // MARK: - 定义模型属性
-    var group : DYAnchorGroupItem? {
+    var baseItem : DYBaseItem? {
         didSet {
-            titleLable.text = group?.tag_name
-            if let urlStr = URL(string: group?.icon_url ?? "") {
+            titleLable.text = baseItem?.tag_name
+            if let urlStr = URL(string: baseItem?.icon_url ?? "") {
             iconGameView.kf.setImage(with: urlStr)
             } else {
                 iconGameView.image = UIImage(named: "home_more_btn")

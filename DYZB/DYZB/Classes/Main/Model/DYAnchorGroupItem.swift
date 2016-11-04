@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DYAnchorGroupItem: NSObject {
+class DYAnchorGroupItem: DYBaseItem {
     /// 改组中对应的房间信息
     var room_list : [[String : Any]]? {
        // 属性监听器
@@ -21,31 +21,14 @@ class DYAnchorGroupItem: NSObject {
             }
         }
     }
-    /// 组显示的标题
-    var tag_name = ""
+    
     /// 组显示的图标
     var icon_name = "home_header_normal"
-    /// 游戏对应的图标
-    var icon_url = ""
     
     
     /// 定义主播的模型对象数组
     lazy var anchors = [DYAnchorItem]()
-    
-    
-    override init() {
-        
-    }
-    
-    init(dict : [String : Any]) {
-        super.init()
-        
-        setValuesForKeys(dict)
-    }
-    
-    override func setValue(_ value: Any?, forUndefinedKey key: String) {
-    }
-    // 方法1
+      // 方法1
     /*
     override func setValue(_ value: Any?, forKey key: String) {
         if key == "room_list" {

@@ -2,30 +2,22 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DYCollectionGameCell" customModule="DYZB" customModuleProvider="target">
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DYCollectionGameCell" customModule="DYZB" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="英雄联盟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exa-Tg-Lol">
-                        <constraints>
-                            <constraint firstAttribute="height" constant="15" id="unX-TS-DGf"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pY9-et-kR7">
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="pY9-et-kR7" secondAttribute="height" multiplier="45:45" id="JXT-13-XJQ"/>
+                            <constraint firstAttribute="height" constant="45" id="BzT-ci-0v0"/>
+                            <constraint firstAttribute="width" constant="45" id="ZJN-J3-Lab"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -34,14 +26,27 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
+                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l6M-zY-hF9">
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="q5x-46-xEb"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="英雄联盟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exa-Tg-Lol">
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="pY9-et-kR7" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="6tI-Kv-qY5"/>
-                <constraint firstItem="exa-Tg-Lol" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="ICP-LO-aks"/>
-                <constraint firstItem="exa-Tg-Lol" firstAttribute="top" secondItem="pY9-et-kR7" secondAttribute="bottom" constant="5" id="Rh4-AP-Zoc"/>
-                <constraint firstItem="pY9-et-kR7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="ghl-Yd-W1K"/>
-                <constraint firstAttribute="bottom" secondItem="exa-Tg-Lol" secondAttribute="bottom" constant="10" id="iKB-ip-Gvl"/>
+                <constraint firstAttribute="bottom" secondItem="l6M-zY-hF9" secondAttribute="bottom" constant="-1" id="ARs-9m-Tbw"/>
+                <constraint firstItem="exa-Tg-Lol" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="AaF-vn-Nh5"/>
+                <constraint firstItem="l6M-zY-hF9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ihb-Sh-G05"/>
+                <constraint firstItem="exa-Tg-Lol" firstAttribute="top" secondItem="pY9-et-kR7" secondAttribute="bottom" constant="5" id="JiJ-zk-tdL"/>
+                <constraint firstItem="pY9-et-kR7" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="WP1-0q-Ote"/>
+                <constraint firstAttribute="trailing" secondItem="l6M-zY-hF9" secondAttribute="trailing" id="c9L-a9-pQ0"/>
+                <constraint firstItem="pY9-et-kR7" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="-7" id="wkG-Kn-ra9"/>
             </constraints>
             <size key="customSize" width="169" height="134"/>
             <connections>

@@ -128,7 +128,7 @@ extension DYRecommendViewModel {
             // 2.根据data的key获取数据
             guard let dataArray = jsonDict["data"] as? [[String: Any]] else { return }
             
-            print(dataArray)
+//            print(dataArray)
             // 3.字典转模型
             for dict in dataArray {
                 self.cycleItems.append(DYCycleItem(dict: dict))
