@@ -108,7 +108,16 @@ extension DYRecommendController {
             self.collection.reloadData()
             
             // 将数据传给gameView
-            self.gameView.groups = self.recommendVM.anchorGroups
+            var groups = self.recommendVM.anchorGroups
+            // 1.移除前两组数据
+            groups.removeFirst()
+            groups.removeFirst()
+            
+            // 添加更多
+            let moreGroup = DYAnchorGroupItem()
+            moreGroup.tag_name = "更多"
+            groups.append(moreGroup)
+            self.gameView.groups = groups
         }
     }
     

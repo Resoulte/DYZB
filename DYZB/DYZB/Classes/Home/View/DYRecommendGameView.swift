@@ -14,20 +14,10 @@ private let kEdgeInset : CGFloat = 10
 class DYRecommendGameView: UIView {
 
     // MARK: - 定义数据属性
-    var groups : [DYAnchorGroupItem]? {
+    var groups : [DYBaseItem]? {
         didSet {
             
-            // 1.移除前两组数据
-            groups?.removeFirst()
-            groups?.removeFirst()
-            
-            // 添加更多
-            let moreGroup = DYAnchorGroupItem()
-            moreGroup.tag_name = "更多"
-            groups?.append(moreGroup)
-            
-            
-            // 2.刷新表格
+            // 刷新表格
             CollectionView.reloadData()
             
         }

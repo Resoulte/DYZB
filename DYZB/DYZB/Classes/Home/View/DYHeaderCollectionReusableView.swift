@@ -12,7 +12,7 @@ class DYHeaderCollectionReusableView: UICollectionReusableView {
 
     @IBOutlet weak var icon_name: UIImageView!
     @IBOutlet weak var tag_name: UILabel!
-    
+    @IBOutlet weak var headerBtn: UIButton!
     // 定义模型属性
     var group : DYAnchorGroupItem? {
         didSet {
@@ -27,4 +27,11 @@ class DYHeaderCollectionReusableView: UICollectionReusableView {
         // Initialization code
     }
     
+}
+
+// MARK: - 提供快速创建的方法
+extension DYHeaderCollectionReusableView {
+   class func loadHeaderView() -> DYHeaderCollectionReusableView {
+        return Bundle.main.loadNibNamed("DYHeaderCollectionReusableView", owner: nil, options: nil)?.first as! DYHeaderCollectionReusableView
+    }
 }
