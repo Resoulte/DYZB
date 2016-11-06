@@ -65,9 +65,6 @@ class DYGameViewController: UIViewController {
        // 加载数据
         loadData()
         
-        
-      
-    
     }
 
 }

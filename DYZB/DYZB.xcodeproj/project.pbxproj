@@ -13,6 +13,8 @@
 		0417E99F1DC5D69700ED375D /* DYRecommendGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0417E99E1DC5D69700ED375D /* DYRecommendGameView.xib */; };
 		0417E9A21DC5E9A000ED375D /* DYCollectionGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417E9A01DC5E9A000ED375D /* DYCollectionGameCell.swift */; };
 		0417E9A31DC5E9A000ED375D /* DYCollectionGameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0417E9A11DC5E9A000ED375D /* DYCollectionGameCell.xib */; };
+		042D1BD31DCE332700860BA4 /* DYAmuseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D1BD21DCE332700860BA4 /* DYAmuseController.swift */; };
+		042D1BD51DCEDB8200860BA4 /* DYAmuseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D1BD41DCEDB8100860BA4 /* DYAmuseViewModel.swift */; };
 		04465F551DB89CEC00ECFF66 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04465F531DB89CEC00ECFF66 /* Home.storyboard */; };
 		04465F581DB89DDB00ECFF66 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04465F561DB89DDB00ECFF66 /* Live.storyboard */; };
 		04465F5B1DB89E0000ECFF66 /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04465F591DB89E0000ECFF66 /* Follow.storyboard */; };
@@ -76,6 +78,8 @@
 		0417E99E1DC5D69700ED375D /* DYRecommendGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DYRecommendGameView.xib; sourceTree = "<group>"; };
 		0417E9A01DC5E9A000ED375D /* DYCollectionGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYCollectionGameCell.swift; sourceTree = "<group>"; };
 		0417E9A11DC5E9A000ED375D /* DYCollectionGameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DYCollectionGameCell.xib; sourceTree = "<group>"; };
+		042D1BD21DCE332700860BA4 /* DYAmuseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYAmuseController.swift; sourceTree = "<group>"; };
+		042D1BD41DCEDB8100860BA4 /* DYAmuseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYAmuseViewModel.swift; sourceTree = "<group>"; };
 		04465F541DB89CEC00ECFF66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB/Base.lproj/Home.storyboard; sourceTree = SOURCE_ROOT; };
 		04465F571DB89DDB00ECFF66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB/Base.lproj/Live.storyboard; sourceTree = SOURCE_ROOT; };
 		04465F5A1DB89E0000ECFF66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB/Base.lproj/Follow.storyboard; sourceTree = SOURCE_ROOT; };
@@ -222,6 +226,7 @@
 				04465F611DB8B04000ECFF66 /* DYHomeViewController.swift */,
 				0448DCD71DC0ECB000E6802B /* DYRecommendController.swift */,
 				04760D331DC78EE4007472F4 /* DYGameViewController.swift */,
+				042D1BD21DCE332700860BA4 /* DYAmuseController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 			children = (
 				04D800281DC203E100DDBC75 /* DYRecommendViewModel.swift */,
 				048132FB1DC8B5B800049A09 /* DYGameViewModel.swift */,
+				042D1BD41DCEDB8100860BA4 /* DYAmuseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -680,6 +686,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04465F601DB8A14300ECFF66 /* DYMainViewController.swift in Sources */,
+				042D1BD31DCE332700860BA4 /* DYAmuseController.swift in Sources */,
 				046831EA1DC59600003E5D6E /* DYRecommendCycleView.swift in Sources */,
 				04FDC3221DBCBF9100BD4C39 /* UIColor-Extension.swift in Sources */,
 				04D8001E1DC1DC4000DDBC75 /* DYNormalCollectionViewCell.swift in Sources */,
@@ -687,6 +694,7 @@
 				04465F681DB8C04600ECFF66 /* UIBarButtonItem-Extension.swift in Sources */,
 				048132FE1DC8B7B600049A09 /* DYGameItem.swift in Sources */,
 				04FDC3201DBCB5AE00BD4C39 /* DYPageContentView.swift in Sources */,
+				042D1BD51DCEDB8200860BA4 /* DYAmuseViewModel.swift in Sources */,
 				046831E41DC4A633003E5D6E /* DYAnchorGroupItem.swift in Sources */,
 				04D800221DC1E64700DDBC75 /* DYPrettyCollectionViewCell.swift in Sources */,
 				0448DCDB1DC1070700E6802B /* DYHeaderCollectionReusableView.swift in Sources */,

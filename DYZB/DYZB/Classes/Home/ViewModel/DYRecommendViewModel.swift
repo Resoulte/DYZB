@@ -16,7 +16,7 @@ import UIKit
 
 class DYRecommendViewModel {
     // MARK: - 懒加载属性
-     lazy var anchorGroups : [DYAnchorGroupItem] = [DYAnchorGroupItem]()
+     lazy var anchorGroups = [DYAnchorGroupItem]()
     fileprivate lazy var bigDataGroup = DYAnchorGroupItem()
     fileprivate lazy var prettyGroup = DYAnchorGroupItem()
     lazy var cycleItems = [DYCycleItem]()

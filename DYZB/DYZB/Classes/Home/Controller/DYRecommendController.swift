@@ -13,8 +13,10 @@ private let kMargain : CGFloat = 10
 private let kItemW = (kScreenW - kMargain * 3) / 2
 private let kNormalItemH = kItemW * 3/4
 private let kPrettyItemH = kItemW * 4/3
+
 private let kHeaderH : CGFloat = 50
 private let kCycleViewH = kScreenW * 3 / 8
+
 private let kGameViewH : CGFloat = 90.0
 private let kNormalID = "normalID"
 private let kPrettyID = "prettyID"
