@@ -12,6 +12,14 @@ private let kGameCellID = "kGameCellID"
 
 class DYAmuseCollectionCell: UICollectionViewCell {
 
+    var groups : [DYAnchorGroupItem]? {
+        
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,12 +44,14 @@ class DYAmuseCollectionCell: UICollectionViewCell {
 extension DYAmuseCollectionCell : UICollectionViewDataSource
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-         return 8
+         return groups?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameCellID, for: indexPath)
-        cell.backgroundColor = UIColor.randomColor()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameCellID, for: indexPath) as! DYCollectionGameCell
+//        cell.backgroundColor = UIColor.randomColor()
+        cell.baseItem = groups?[indexPath.item]
+        cell.clipsToBounds = true
         return cell
     }
 }

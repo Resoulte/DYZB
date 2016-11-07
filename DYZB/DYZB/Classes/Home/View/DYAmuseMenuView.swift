@@ -12,7 +12,15 @@ private let kAmuseViewID = "kAmuseViewID"
 
 class DYAmuseMenuView: UIView {
 
+    
+    var groups : [DYAnchorGroupItem]? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+   
     @IBOutlet weak var collectionView: UICollectionView!
+    
     @IBOutlet weak var pageControll: UIPageControl!
     
     // MARK: - 从xib中加载
@@ -44,13 +52,51 @@ extension DYAmuseMenuView {
 extension DYAmuseMenuView : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return 2
+        if groups == nil {
+            return 0
+        }
+//        let pageNum = (groups?.count)! % 8 + 1
+        let pageNum = (groups!.count - 1) / 8 + 1
+        pageControll.numberOfPages = pageNum
+        
+        return pageNum
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kAmuseViewID, for: indexPath)
+     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kAmuseViewID, for: indexPath) as! DYAmuseCollectionCell
 //        cell.backgroundColor = UIColor.randomColor()
+        // 给cell设置数据
+        setupCellDataWithCell(cell: cell, indexPath: indexPath)
         
         return cell
+    }
+    
+    private func setupCellDataWithCell(cell: DYAmuseCollectionCell, indexPath: IndexPath) {
+        
+        // o页：0-7
+        // 1页：8-15
+        // 2页：16-23
+        // 取出起始位置,终点位置
+        let startIndex = indexPath.item * 8
+        var endIndex = (indexPath.item + 1) * 8 - 1
+        
+        // 判断越界问题
+        if endIndex > (groups?.count)! - 1 {
+            endIndex = (groups?.count)! - 1
+        }
+        
+        // 取出数据并赋值给cell
+        
+        cell.groups = Array(groups![startIndex...endIndex])
+        
+        
+        
+    }
+}
+
+extension DYAmuseMenuView : UICollectionViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        pageControll.currentPage = Int(scrollView.contentOffset.x / scrollView.bounds.width)
     }
 }

@@ -17,7 +17,7 @@ class DYAmuseController: DYBaseViewController {
     lazy var amuseMenuView: DYAmuseMenuView = {
         let amuseMenuView = DYAmuseMenuView.amuseMenuView()
         amuseMenuView.frame = CGRect(x: 0, y: -kAmuseMenuViewH, width: kScreenW, height: kAmuseMenuViewH)
-        amuseMenuView.backgroundColor = UIColor.purple
+//        amuseMenuView.backgroundColor = UIColor.purple
         return amuseMenuView
     }()
     
@@ -43,6 +43,9 @@ extension DYAmuseController {
     // 2.请求数据
         amuseVM.loadAmuseData {
             self.collection.reloadData()
+            var amuseTempGroup = self.amuseVM.anchorGroups
+            amuseTempGroup.removeFirst()
+            self.amuseMenuView.groups = amuseTempGroup
         }
     }
 }
