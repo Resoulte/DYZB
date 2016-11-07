@@ -19,6 +19,8 @@
 		0441C0DA1DD0623200B58881 /* DYBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441C0D91DD0623100B58881 /* DYBaseViewController.swift */; };
 		0441C0DC1DD0831E00B58881 /* DYAmuseMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441C0DB1DD0831E00B58881 /* DYAmuseMenuView.swift */; };
 		0441C0DE1DD0833E00B58881 /* DYAmuseMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0441C0DD1DD0833E00B58881 /* DYAmuseMenuView.xib */; };
+		0441C0E11DD08FFC00B58881 /* DYAmuseCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441C0DF1DD08FFC00B58881 /* DYAmuseCollectionCell.swift */; };
+		0441C0E21DD08FFC00B58881 /* DYAmuseCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0441C0E01DD08FFC00B58881 /* DYAmuseCollectionCell.xib */; };
 		04465F551DB89CEC00ECFF66 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04465F531DB89CEC00ECFF66 /* Home.storyboard */; };
 		04465F581DB89DDB00ECFF66 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04465F561DB89DDB00ECFF66 /* Live.storyboard */; };
 		04465F5B1DB89E0000ECFF66 /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04465F591DB89E0000ECFF66 /* Follow.storyboard */; };
@@ -88,6 +90,8 @@
 		0441C0D91DD0623100B58881 /* DYBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYBaseViewController.swift; sourceTree = "<group>"; };
 		0441C0DB1DD0831E00B58881 /* DYAmuseMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYAmuseMenuView.swift; sourceTree = "<group>"; };
 		0441C0DD1DD0833E00B58881 /* DYAmuseMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DYAmuseMenuView.xib; sourceTree = "<group>"; };
+		0441C0DF1DD08FFC00B58881 /* DYAmuseCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYAmuseCollectionCell.swift; sourceTree = "<group>"; };
+		0441C0E01DD08FFC00B58881 /* DYAmuseCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DYAmuseCollectionCell.xib; sourceTree = "<group>"; };
 		04465F541DB89CEC00ECFF66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB/Base.lproj/Home.storyboard; sourceTree = SOURCE_ROOT; };
 		04465F571DB89DDB00ECFF66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB/Base.lproj/Live.storyboard; sourceTree = SOURCE_ROOT; };
 		04465F5A1DB89E0000ECFF66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB/Base.lproj/Follow.storyboard; sourceTree = SOURCE_ROOT; };
@@ -263,6 +267,8 @@
 				0417E9A11DC5E9A000ED375D /* DYCollectionGameCell.xib */,
 				0441C0DB1DD0831E00B58881 /* DYAmuseMenuView.swift */,
 				0441C0DD1DD0833E00B58881 /* DYAmuseMenuView.xib */,
+				0441C0DF1DD08FFC00B58881 /* DYAmuseCollectionCell.swift */,
+				0441C0E01DD08FFC00B58881 /* DYAmuseCollectionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -625,6 +631,7 @@
 				04465F5E1DB89E2000ECFF66 /* Profile.storyboard in Resources */,
 				04465F5B1DB89E0000ECFF66 /* Follow.storyboard in Resources */,
 				0448DCDC1DC1070700E6802B /* DYHeaderCollectionReusableView.xib in Resources */,
+				0441C0E21DD08FFC00B58881 /* DYAmuseCollectionCell.xib in Resources */,
 				046831EE1DC59676003E5D6E /* DYRecommendCycleView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -724,6 +731,7 @@
 				046831E61DC4AD6E003E5D6E /* DYAnchorItem.swift in Sources */,
 				048132FC1DC8B5B800049A09 /* DYGameViewModel.swift in Sources */,
 				0417E9A21DC5E9A000ED375D /* DYCollectionGameCell.swift in Sources */,
+				0441C0E11DD08FFC00B58881 /* DYAmuseCollectionCell.swift in Sources */,
 				048133001DC8B7C900049A09 /* DYBaseItem.swift in Sources */,
 				046831F01DC5A767003E5D6E /* DYCycleItem.swift in Sources */,
 				04465F621DB8B04000ECFF66 /* DYHomeViewController.swift in Sources */,

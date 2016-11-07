@@ -23,6 +23,9 @@
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="Tt9-yg-8mQ"/>
+                    </connections>
                 </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -35,6 +38,10 @@
                 <constraint firstAttribute="bottom" secondItem="QEI-Wu-4mc" secondAttribute="bottom" constant="-5" id="ie2-3E-YeQ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="collectionView" destination="nXA-jO-2Mh" id="0rs-rC-Eor"/>
+                <outlet property="pageControll" destination="QEI-Wu-4mc" id="sNZ-tN-4bF"/>
+            </connections>
         </view>
     </objects>
 </document>

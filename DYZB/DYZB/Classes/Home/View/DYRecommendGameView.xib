@@ -8,7 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DYRecommendGameView" customModule="DYZB" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+            <rect key="frame" x="0.0" y="0.0" width="362" height="90"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Jfj-Oi-pc5">
@@ -35,7 +35,7 @@
             <connections>
                 <outlet property="CollectionView" destination="Jfj-Oi-pc5" id="pGG-x1-Ek8"/>
             </connections>
-            <point key="canvasLocation" x="49.5" y="105"/>
+            <point key="canvasLocation" x="56" y="105"/>
         </view>
     </objects>
 </document>
