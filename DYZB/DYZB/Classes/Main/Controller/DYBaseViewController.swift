@@ -10,14 +10,19 @@ import UIKit
 
 // MARK: -定义常量
 private let kMargain : CGFloat = 10
-private let kItemW = (kScreenW - kMargain * 3) / 2
-private let kNormalItemH = kItemW * 3/4
-private let kPrettyItemH = kItemW * 4/3
+
+
 private let kHeaderH : CGFloat = 50
 private let kGameViewH : CGFloat = 90.0
-private let kNormalID = "normalID"
-private let kPrettyID = "prettyID"
+
 private let kHeaderID = "headerID"
+
+let kNormalID = "normalID"
+let kPrettyID = "prettyID"
+let kNormalItemW = (kScreenW - kMargain * 3) / 2
+let kNormalItemH = kNormalItemW * 3/4
+let kPrettyItemH = kNormalItemW * 4/3
+
 
 
 class DYBaseViewController: UIViewController {
@@ -27,7 +32,7 @@ class DYBaseViewController: UIViewController {
     lazy var collection: UICollectionView = { [weak self] in
         
         let flow = UICollectionViewFlowLayout()
-        flow.itemSize = CGSize(width: kItemW, height: kNormalItemH)
+        flow.itemSize = CGSize(width: kNormalItemW, height: kNormalItemH)
         flow.minimumLineSpacing = 0
         flow.minimumInteritemSpacing = kMargain
         flow.headerReferenceSize = CGSize(width: kScreenW, height: kHeaderH)
@@ -38,7 +43,7 @@ class DYBaseViewController: UIViewController {
         let collection = UICollectionView(frame: (self?.view.bounds)!, collectionViewLayout: flow)
         collection.backgroundColor = UIColor.white
         collection.dataSource = self
-        collection.delegate = self
+//        collection.delegate = self
         
         // MARK: - 根据父控件的宽高自动调整
         collection.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -82,7 +87,7 @@ extension DYBaseViewController {
 
 
 // MARK: - UICollectionViewDataSource
-extension DYBaseViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension DYBaseViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return baseVM.anchorGroups.count
     }

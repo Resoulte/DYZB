@@ -9,52 +9,19 @@
 import UIKit
 
 // MARK: -定义常量
-private let kMargain : CGFloat = 10
-private let kItemW = (kScreenW - kMargain * 3) / 2
-private let kNormalItemH = kItemW * 3/4
-private let kPrettyItemH = kItemW * 4/3
 
-private let kHeaderH : CGFloat = 50
+
 private let kCycleViewH = kScreenW * 3 / 8
-
 private let kGameViewH : CGFloat = 90.0
-private let kNormalID = "normalID"
-private let kPrettyID = "prettyID"
-private let kHeaderID = "headerID"
 
 
-class DYRecommendController: UIViewController {
+
+
+
+class DYRecommendController: DYBaseViewController {
 
     // MARK: -懒加载
     lazy var recommendVM = DYRecommendViewModel()
-    lazy var collection: UICollectionView = { [weak self] in
-        
-        let flow = UICollectionViewFlowLayout()
-        flow.itemSize = CGSize(width: kItemW, height: kNormalItemH)
-        flow.minimumLineSpacing = 0
-        flow.minimumInteritemSpacing = kMargain
-        flow.headerReferenceSize = CGSize(width: kScreenW, height: kHeaderH)
-        // 设置内边距
-        flow.sectionInset = UIEdgeInsets(top: 0, left: kMargain, bottom: 0, right: kMargain)
-        
-        
-        let collection = UICollectionView(frame: (self?.view.bounds)!, collectionViewLayout: flow)
-        collection.backgroundColor = UIColor.white
-        collection.dataSource = self
-        collection.delegate = self
-        
-        // MARK: - 根据父控件的宽高自动调整
-        collection.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        collection.register(UINib(nibName: "DYNormalCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: kNormalID)
-        
-         collection.register(UINib(nibName: "DYPrettyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: kPrettyID)
-        
-        collection.register(UINib(nibName: "DYHeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderID)
-        
-        return collection
-    }()
-    
      lazy var cycleView : DYRecommendCycleView = {
         
         let cycleView = DYRecommendCycleView.recommendCycleView()
@@ -73,12 +40,6 @@ class DYRecommendController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        
-        setupUI()
-        
-        // 发送网络请求
-        loadData()
-        
         loadCycleData()
     }
 
@@ -87,7 +48,10 @@ class DYRecommendController: UIViewController {
 // MARK: - 设置UI界面
 extension DYRecommendController {
     
-   fileprivate func setupUI() {
+   override func setupUI() {
+    
+        super.setupUI()
+        collection.delegate = self
         // 1.将UICollectionView加入控制器view当中
         view.addSubview(collection)
     
@@ -105,7 +69,10 @@ extension DYRecommendController {
 // MARK: - 请求数据
 extension DYRecommendController {
     // 请求推荐数据
-    fileprivate func loadData() {
+    override func loadData() {
+        // 1.给父类中的viewmodel赋值
+        baseVM = recommendVM
+        // 2.发送请求
         recommendVM.requestData {
             self.collection.reloadData()
             
@@ -132,29 +99,14 @@ extension DYRecommendController {
     
 }
 
-extension DYRecommendController : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension DYRecommendController : UICollectionViewDelegateFlowLayout{
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
-        return recommendVM.anchorGroups.count
-    }
-
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let group = recommendVM.anchorGroups[section]
-        return group.anchors.count
-        
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let group = recommendVM.anchorGroups[indexPath.section]
         let anchor = group.anchors[indexPath.item]
-        
-        
-        
-        if indexPath.section == 1 {
+    
+    if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyID, for: indexPath) as! DYPrettyCollectionViewCell
             cell.anchor = anchor
             return cell
@@ -167,21 +119,12 @@ extension DYRecommendController : UICollectionViewDataSource, UICollectionViewDe
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderID, for: indexPath) as! DYHeaderCollectionReusableView
-        
-        headerView.group = recommendVM.anchorGroups[indexPath.section]
-        
-
-               
-        return headerView
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 1 {
-            return CGSize(width: kItemW, height: kPrettyItemH)
+            return CGSize(width: kNormalItemW, height: kPrettyItemH)
         } else {
-            return CGSize(width: kItemW, height: kNormalItemH)
+            return CGSize(width: kNormalItemW, height: kNormalItemH)
         }
     }
 }
+
