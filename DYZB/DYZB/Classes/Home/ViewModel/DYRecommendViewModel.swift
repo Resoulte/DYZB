@@ -14,9 +14,9 @@
 
 import UIKit
 
-class DYRecommendViewModel {
+class DYRecommendViewModel : DYBaseViewModel{
     // MARK: - 懒加载属性
-     lazy var anchorGroups = [DYAnchorGroupItem]()
+//     lazy var anchorGroups = [DYAnchorGroupItem]()
     fileprivate lazy var bigDataGroup = DYAnchorGroupItem()
     fileprivate lazy var prettyGroup = DYAnchorGroupItem()
     lazy var cycleItems = [DYCycleItem]()
@@ -77,31 +77,36 @@ extension DYRecommendViewModel {
         }
         
         // 3.请求游戏数据
-        Group.enter()
-        DYNetWorksTools.requestJsonData(type: .get, URLString: "http://capi.douyucdn.cn/api/v1/getHotCate", params: ["limit" : 4, "offset" : 0, "time" : Date.getCurrentTime()]) { (json) in
-            
-            // 1.将json转换为字典
-            guard let jsonDict = json as? [String : Any] else { return }
-            
-            // 2.根据data该key获取数组(数组里面又放的是字典)
-            guard let dataArray = jsonDict["data"] as? [[String : Any]] else { return }
-            
-            // 3.遍历字典，并且转成模型对象
-            for dictItem in dataArray {
-                let group = DYAnchorGroupItem(dict: dictItem)
-                self.anchorGroups.append(group)
-            }
-            
-//            for group in self.anchorGroups {
-//                for anchor in group.anchors {
-////                    print(anchor.nickname)
-//                }
-////                print("-----")
+//        Group.enter()
+//        DYNetWorksTools.requestJsonData(type: .get, URLString: "http://capi.douyucdn.cn/api/v1/getHotCate", params: ["limit" : 4, "offset" : 0, "time" : Date.getCurrentTime()]) { (json) in
+//            
+//            // 1.将json转换为字典
+//            guard let jsonDict = json as? [String : Any] else { return }
+//            
+//            // 2.根据data该key获取数组(数组里面又放的是字典)
+//            guard let dataArray = jsonDict["data"] as? [[String : Any]] else { return }
+//            
+//            // 3.遍历字典，并且转成模型对象
+//            for dictItem in dataArray {
+//                let group = DYAnchorGroupItem(dict: dictItem)
+//                self.anchorGroups.append(group)
 //            }
+//            
+////            for group in self.anchorGroups {
+////                for anchor in group.anchors {
+//////                    print(anchor.nickname)
+////                }
+//////                print("-----")
+////            }
+//            Group.leave()
+//            
+//            
+//            
+//        }
+        
+        Group.enter()
+        loadAnchorsData(URLString: "http://capi.douyucdn.cn/api/v1/getHotCate", params: ["limit" : 4, "offset" : 0, "time" : Date.getCurrentTime()]) { 
             Group.leave()
-            
-            
-            
         }
         
         // 所有的数据都请求到,之后进行排序

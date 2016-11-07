@@ -15,6 +15,7 @@
 		0417E9A31DC5E9A000ED375D /* DYCollectionGameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0417E9A11DC5E9A000ED375D /* DYCollectionGameCell.xib */; };
 		042D1BD31DCE332700860BA4 /* DYAmuseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D1BD21DCE332700860BA4 /* DYAmuseController.swift */; };
 		042D1BD51DCEDB8200860BA4 /* DYAmuseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D1BD41DCEDB8100860BA4 /* DYAmuseViewModel.swift */; };
+		0441C0D81DD05A9A00B58881 /* DYBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441C0D71DD05A9A00B58881 /* DYBaseViewModel.swift */; };
 		04465F551DB89CEC00ECFF66 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04465F531DB89CEC00ECFF66 /* Home.storyboard */; };
 		04465F581DB89DDB00ECFF66 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04465F561DB89DDB00ECFF66 /* Live.storyboard */; };
 		04465F5B1DB89E0000ECFF66 /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04465F591DB89E0000ECFF66 /* Follow.storyboard */; };
@@ -80,6 +81,7 @@
 		0417E9A11DC5E9A000ED375D /* DYCollectionGameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DYCollectionGameCell.xib; sourceTree = "<group>"; };
 		042D1BD21DCE332700860BA4 /* DYAmuseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYAmuseController.swift; sourceTree = "<group>"; };
 		042D1BD41DCEDB8100860BA4 /* DYAmuseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYAmuseViewModel.swift; sourceTree = "<group>"; };
+		0441C0D71DD05A9A00B58881 /* DYBaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYBaseViewModel.swift; sourceTree = "<group>"; };
 		04465F541DB89CEC00ECFF66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB/Base.lproj/Home.storyboard; sourceTree = SOURCE_ROOT; };
 		04465F571DB89DDB00ECFF66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB/Base.lproj/Live.storyboard; sourceTree = SOURCE_ROOT; };
 		04465F5A1DB89E0000ECFF66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DYZB/Base.lproj/Follow.storyboard; sourceTree = SOURCE_ROOT; };
@@ -211,10 +213,10 @@
 		04465F3D1DB88FC400ECFF66 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				04465F411DB88FC400ECFF66 /* ViewModel */,
 				04465F3F1DB88FC400ECFF66 /* Model */,
 				04465F401DB88FC400ECFF66 /* View */,
 				04465F3E1DB88FC400ECFF66 /* Controller */,
-				04465F411DB88FC400ECFF66 /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -353,6 +355,7 @@
 		04465F4B1DB88FC400ECFF66 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0441C0D71DD05A9A00B58881 /* DYBaseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -713,6 +716,7 @@
 				046831F01DC5A767003E5D6E /* DYCycleItem.swift in Sources */,
 				04465F621DB8B04000ECFF66 /* DYHomeViewController.swift in Sources */,
 				0417E99D1DC5D67700ED375D /* DYRecommendGameView.swift in Sources */,
+				0441C0D81DD05A9A00B58881 /* DYBaseViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
