@@ -89,15 +89,25 @@ extension DYBaseViewController {
 // MARK: - UICollectionViewDataSource
 extension DYBaseViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        if baseVM == nil {
+            return 1
+        }
         return baseVM.anchorGroups.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if baseVM == nil {
+            return 20
+        }
         return baseVM.anchorGroups[section].anchors.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalID, for: indexPath) as! DYNormalCollectionViewCell
+        
+        if baseVM == nil {
+            return cell
+        }
         
         cell.anchor = baseVM.anchorGroups[indexPath.section].anchors[indexPath.item]
         //        cell.backgroundColor = UIColor.randomColor()
@@ -107,6 +117,11 @@ extension DYBaseViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderID, for: indexPath) as! DYHeaderCollectionReusableView
+        
+        if baseVM == nil {
+            return header
+        }
+        
         header.group = baseVM.anchorGroups[indexPath.section]
         
         return header

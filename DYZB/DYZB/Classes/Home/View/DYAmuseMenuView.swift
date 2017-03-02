@@ -76,16 +76,16 @@ extension DYAmuseMenuView : UICollectionViewDataSource {
         // o页：0-7
         // 1页：8-15
         // 2页：16-23
-        // 取出起始位置,终点位置
+        // 1.取出起始位置,终点位置
         let startIndex = indexPath.item * 8
         var endIndex = (indexPath.item + 1) * 8 - 1
         
-        // 判断越界问题
+        // 2.判断越界问题
         if endIndex > (groups?.count)! - 1 {
             endIndex = (groups?.count)! - 1
         }
         
-        // 取出数据并赋值给cell
+        // 3.取出数据并赋值给cell
         
         cell.groups = Array(groups![startIndex...endIndex])
         
@@ -95,7 +95,7 @@ extension DYAmuseMenuView : UICollectionViewDataSource {
 }
 
 extension DYAmuseMenuView : UICollectionViewDelegate {
-    
+    // 随着滑动而滚动
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pageControll.currentPage = Int(scrollView.contentOffset.x / scrollView.bounds.width)
     }

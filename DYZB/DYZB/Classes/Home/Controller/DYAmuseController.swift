@@ -44,6 +44,7 @@ extension DYAmuseController {
         amuseVM.loadAmuseData {
             self.collection.reloadData()
             var amuseTempGroup = self.amuseVM.anchorGroups
+            // 删除第一条数据
             amuseTempGroup.removeFirst()
             self.amuseMenuView.groups = amuseTempGroup
         }

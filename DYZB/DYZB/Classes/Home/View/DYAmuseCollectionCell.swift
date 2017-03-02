@@ -48,7 +48,9 @@ extension DYAmuseCollectionCell : UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameCellID, for: indexPath) as! DYCollectionGameCell
+        
 //        cell.backgroundColor = UIColor.randomColor()
         cell.baseItem = groups?[indexPath.item]
         cell.clipsToBounds = true

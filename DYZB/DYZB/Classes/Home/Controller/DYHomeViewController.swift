@@ -36,12 +36,14 @@ class DYHomeViewController: UIViewController {
         childVCs.append(DYRecommendController())
         childVCs.append(DYGameViewController())
         childVCs.append(DYAmuseController())
-        for _ in 0..<1 {
-            let vc = UIViewController()
-            vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
-            
-            childVCs.append(vc)
-        }
+        childVCs.append(DYFunnyViewController())
+        
+//        for _ in 0..<1 {
+//            let vc = UIViewController()
+//            vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
+//            
+//            childVCs.append(vc)
+//        }
         
         let contentView = DYPageContentView(frame: contentFrame, childVcs: childVCs, parentViewController: self)
         contentView.delegate = self

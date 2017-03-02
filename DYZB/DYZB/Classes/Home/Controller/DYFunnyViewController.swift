@@ -7,29 +7,18 @@
 //
 
 import UIKit
+private let kTopMargain : CGFloat = 8
 
-class DYFunnyViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+class DYFunnyViewController: DYBaseViewController {
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension DYFunnyViewController {
+    override func setupUI() {
+        super.setupUI()
+        let layout = collection.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.headerReferenceSize = CGSize.zero
+        collection.contentInset = UIEdgeInsets(top: kTopMargain, left: 0, bottom: 0, right: 0)
+        
     }
-    */
-
 }

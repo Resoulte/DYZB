@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000A68AA1E6683EB002A2E2B /* DYFunnyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A68A91E6683EB002A2E2B /* DYFunnyViewController.swift */; };
 		0417E99A1DC5C71300ED375D /* DYCollectionCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417E9981DC5C71300ED375D /* DYCollectionCycleCell.swift */; };
 		0417E99B1DC5C71400ED375D /* DYCollectionCycleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0417E9991DC5C71300ED375D /* DYCollectionCycleCell.xib */; };
 		0417E99D1DC5D67700ED375D /* DYRecommendGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417E99C1DC5D67700ED375D /* DYRecommendGameView.swift */; };
@@ -78,6 +79,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		000A68A91E6683EB002A2E2B /* DYFunnyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYFunnyViewController.swift; sourceTree = "<group>"; };
 		0417E9981DC5C71300ED375D /* DYCollectionCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYCollectionCycleCell.swift; sourceTree = "<group>"; };
 		0417E9991DC5C71300ED375D /* DYCollectionCycleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DYCollectionCycleCell.xib; sourceTree = "<group>"; };
 		0417E99C1DC5D67700ED375D /* DYRecommendGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYRecommendGameView.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				0448DCD71DC0ECB000E6802B /* DYRecommendController.swift */,
 				04760D331DC78EE4007472F4 /* DYGameViewController.swift */,
 				042D1BD21DCE332700860BA4 /* DYAmuseController.swift */,
+				000A68A91E6683EB002A2E2B /* DYFunnyViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 				0417E9A21DC5E9A000ED375D /* DYCollectionGameCell.swift in Sources */,
 				0441C0E11DD08FFC00B58881 /* DYAmuseCollectionCell.swift in Sources */,
 				048133001DC8B7C900049A09 /* DYBaseItem.swift in Sources */,
+				000A68AA1E6683EB002A2E2B /* DYFunnyViewController.swift in Sources */,
 				046831F01DC5A767003E5D6E /* DYCycleItem.swift in Sources */,
 				04465F621DB8B04000ECFF66 /* DYHomeViewController.swift in Sources */,
 				0417E99D1DC5D67700ED375D /* DYRecommendGameView.swift in Sources */,
