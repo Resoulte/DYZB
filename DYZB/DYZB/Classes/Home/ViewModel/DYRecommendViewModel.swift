@@ -105,7 +105,7 @@ extension DYRecommendViewModel {
 //        }
         
         Group.enter()
-        loadAnchorsData(URLString: "http://capi.douyucdn.cn/api/v1/getHotCate", params: ["limit" : 4, "offset" : 0, "time" : Date.getCurrentTime()]) { 
+        loadAnchorsData(isGroupData: true, URLString: "http://capi.douyucdn.cn/api/v1/getHotCate", params: ["limit" : 4, "offset" : 0, "time" : Date.getCurrentTime()]) {
             Group.leave()
         }
         

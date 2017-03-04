@@ -15,6 +15,6 @@ class DYAmuseViewModel : DYBaseViewModel{
 
 extension DYAmuseViewModel {
     func loadAmuseData(finishCalllBack: @escaping () -> ()) {
-       loadAnchorsData(URLString: "http://capi.douyucdn.cn/api/v1/getHotRoom/2", finishedCallback: finishCalllBack)
+       loadAnchorsData(isGroupData: true, URLString: "http://capi.douyucdn.cn/api/v1/getHotRoom/2", finishedCallback: finishCalllBack)
     }
 }
