@@ -35,5 +35,7 @@ extension DYFunnyViewController {
         funnyVM.loadFunnyData {
             self.collection.reloadData()
         }
+        
+        self.loadFinishedData()
     }
 }

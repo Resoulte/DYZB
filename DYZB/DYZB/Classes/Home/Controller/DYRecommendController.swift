@@ -88,6 +88,8 @@ extension DYRecommendController {
             groups.append(moreGroup)
             self.gameView.groups = groups
         }
+        
+        self.loadFinishedData()
     }
     
     // 请求轮播数据

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		000A68AA1E6683EB002A2E2B /* DYFunnyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A68A91E6683EB002A2E2B /* DYFunnyViewController.swift */; };
 		000A68AC1E6AB082002A2E2B /* DYFunnyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A68AB1E6AB082002A2E2B /* DYFunnyViewModel.swift */; };
+		000A68AE1E6ABB58002A2E2B /* DYAllBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A68AD1E6ABB58002A2E2B /* DYAllBaseViewController.swift */; };
+		000A68B71E6ACC82002A2E2B /* DYShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A68B61E6ACC82002A2E2B /* DYShowViewController.swift */; };
+		000A68B91E6ACC8B002A2E2B /* DYNormalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A68B81E6ACC8B002A2E2B /* DYNormalViewController.swift */; };
+		000A68BB1E6AD192002A2E2B /* DYCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A68BA1E6AD192002A2E2B /* DYCustomViewController.swift */; };
 		0417E99A1DC5C71300ED375D /* DYCollectionCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417E9981DC5C71300ED375D /* DYCollectionCycleCell.swift */; };
 		0417E99B1DC5C71400ED375D /* DYCollectionCycleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0417E9991DC5C71300ED375D /* DYCollectionCycleCell.xib */; };
 		0417E99D1DC5D67700ED375D /* DYRecommendGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417E99C1DC5D67700ED375D /* DYRecommendGameView.swift */; };
@@ -82,6 +86,10 @@
 /* Begin PBXFileReference section */
 		000A68A91E6683EB002A2E2B /* DYFunnyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYFunnyViewController.swift; sourceTree = "<group>"; };
 		000A68AB1E6AB082002A2E2B /* DYFunnyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYFunnyViewModel.swift; sourceTree = "<group>"; };
+		000A68AD1E6ABB58002A2E2B /* DYAllBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYAllBaseViewController.swift; sourceTree = "<group>"; };
+		000A68B61E6ACC82002A2E2B /* DYShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYShowViewController.swift; sourceTree = "<group>"; };
+		000A68B81E6ACC8B002A2E2B /* DYNormalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYNormalViewController.swift; sourceTree = "<group>"; };
+		000A68BA1E6AD192002A2E2B /* DYCustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYCustomViewController.swift; sourceTree = "<group>"; };
 		0417E9981DC5C71300ED375D /* DYCollectionCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYCollectionCycleCell.swift; sourceTree = "<group>"; };
 		0417E9991DC5C71300ED375D /* DYCollectionCycleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DYCollectionCycleCell.xib; sourceTree = "<group>"; };
 		0417E99C1DC5D67700ED375D /* DYRecommendGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYRecommendGameView.swift; sourceTree = "<group>"; };
@@ -171,10 +179,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		000A68B11E6ACC60002A2E2B /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				000A68B51E6ACC60002A2E2B /* ViewModel */,
+				000A68B31E6ACC60002A2E2B /* Model */,
+				000A68B41E6ACC60002A2E2B /* View */,
+				000A68B21E6ACC60002A2E2B /* Controller */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
+		000A68B21E6ACC60002A2E2B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				000A68B61E6ACC82002A2E2B /* DYShowViewController.swift */,
+				000A68B81E6ACC8B002A2E2B /* DYNormalViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		000A68B31E6ACC60002A2E2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		000A68B41E6ACC60002A2E2B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		000A68B51E6ACC60002A2E2B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		04465F371DB88FC400ECFF66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				04465F471DB88FC400ECFF66 /* Main */,
+				000A68B11E6ACC60002A2E2B /* Room */,
 				04465F381DB88FC400ECFF66 /* Follow */,
 				04465F3D1DB88FC400ECFF66 /* Home */,
 				04465F421DB88FC400ECFF66 /* Live */,
@@ -346,6 +396,8 @@
 				048625D01DB798B700596733 /* Main.storyboard */,
 				04465F5F1DB8A14300ECFF66 /* DYMainViewController.swift */,
 				0441C0D91DD0623100B58881 /* DYBaseViewController.swift */,
+				000A68AD1E6ABB58002A2E2B /* DYAllBaseViewController.swift */,
+				000A68BA1E6AD192002A2E2B /* DYCustomViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -713,6 +765,7 @@
 			files = (
 				04465F601DB8A14300ECFF66 /* DYMainViewController.swift in Sources */,
 				042D1BD31DCE332700860BA4 /* DYAmuseController.swift in Sources */,
+				000A68AE1E6ABB58002A2E2B /* DYAllBaseViewController.swift in Sources */,
 				046831EA1DC59600003E5D6E /* DYRecommendCycleView.swift in Sources */,
 				04FDC3221DBCBF9100BD4C39 /* UIColor-Extension.swift in Sources */,
 				04D8001E1DC1DC4000DDBC75 /* DYNormalCollectionViewCell.swift in Sources */,
@@ -737,11 +790,14 @@
 				04A97C241DB8F58300087920 /* Common.swift in Sources */,
 				046831E61DC4AD6E003E5D6E /* DYAnchorItem.swift in Sources */,
 				048132FC1DC8B5B800049A09 /* DYGameViewModel.swift in Sources */,
+				000A68B91E6ACC8B002A2E2B /* DYNormalViewController.swift in Sources */,
 				0417E9A21DC5E9A000ED375D /* DYCollectionGameCell.swift in Sources */,
 				0441C0E11DD08FFC00B58881 /* DYAmuseCollectionCell.swift in Sources */,
 				048133001DC8B7C900049A09 /* DYBaseItem.swift in Sources */,
+				000A68B71E6ACC82002A2E2B /* DYShowViewController.swift in Sources */,
 				000A68AA1E6683EB002A2E2B /* DYFunnyViewController.swift in Sources */,
 				046831F01DC5A767003E5D6E /* DYCycleItem.swift in Sources */,
+				000A68BB1E6AD192002A2E2B /* DYCustomViewController.swift in Sources */,
 				04465F621DB8B04000ECFF66 /* DYHomeViewController.swift in Sources */,
 				0417E99D1DC5D67700ED375D /* DYRecommendGameView.swift in Sources */,
 				0441C0D81DD05A9A00B58881 /* DYBaseViewModel.swift in Sources */,

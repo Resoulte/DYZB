@@ -48,6 +48,8 @@ extension DYAmuseController {
             amuseTempGroup.removeFirst()
             self.amuseMenuView.groups = amuseTempGroup
         }
+    
+    self.loadFinishedData()
     }
 }
 

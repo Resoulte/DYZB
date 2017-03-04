@@ -16,7 +16,7 @@ private let kHeaderView : CGFloat = 90
 private let kGameCell = "kGameCell"
 private let kGameHeader = "kGameHeader"
 
-class DYGameViewController: UIViewController {
+class DYGameViewController: DYAllBaseViewController {
 
     // MARK: - 懒加载属性
     fileprivate lazy var gameVM = DYGameViewModel()
@@ -72,7 +72,10 @@ class DYGameViewController: UIViewController {
 // MARK: - 设置UI
 extension DYGameViewController {
     
-    fileprivate func setupUI() {
+    override func setupUI() {
+        
+        contentionView = collection
+        
         // 1.添加collection
         view.addSubview(collection)
         // 2.往collectionview上添加topHeaderView
@@ -82,6 +85,8 @@ extension DYGameViewController {
         
         // 设置collection的内边距
         collection.contentInset = UIEdgeInsets(top: kHeaderH + kHeaderView, left: 0, bottom: 0, right: 0)
+        
+        super.setupUI()
     }
 }
 
@@ -95,6 +100,8 @@ extension DYGameViewController {
             self.commonGameView.groups = Array(self.gameVM.gameItems[0..<10])
             
         }
+        
+        self.loadFinishedData()
     }
 }
 

@@ -25,7 +25,7 @@ let kPrettyItemH = kNormalItemW * 4/3
 
 
 
-class DYBaseViewController: UIViewController {
+class DYBaseViewController: DYAllBaseViewController {
 
     // MARK: - 定义属性
     var baseVM : DYBaseViewModel!
@@ -79,9 +79,17 @@ extension DYBaseViewController {
 
 // MARK: - 设置UI布局
 extension DYBaseViewController {
-    func setupUI() {
-        // 添加collection
+    override func setupUI() {
+        
+        // 1.给父类中的view赋值
+        contentionView = collection
+        
+        // 2.添加collection
         view.addSubview(collection)
+        
+        // 3.调用父类
+        super.setupUI()
+       
     }
 }
 
@@ -113,6 +121,29 @@ extension DYBaseViewController: UICollectionViewDataSource {
         header.group = baseVM.anchorGroups[indexPath.section]
         
         return header
+    }
+}
+
+extension DYBaseViewController : UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        print("点击了：\(indexPath)")
+        // 1.取出对应的主播信息
+        let anchor = baseVM.anchorGroups[indexPath.section].anchors[indexPath.item]
+        
+        // 2.判断是普通房间还是秀场房间
+        anchor.isVertical == 0 ? pushNormalRoomVC() : presentShowRoomVC()
+    }
+    
+    private func presentShowRoomVC() {
+        let showRoomVC = DYShowViewController()
+        present(showRoomVC, animated: true, completion: nil)
+        
+    }
+    
+    private func pushNormalRoomVC() {
+        let normalRoomVC = DYNormalViewController()
+        navigationController?.pushViewController(normalRoomVC, animated: true)
+        
     }
 }
 

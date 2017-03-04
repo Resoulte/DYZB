@@ -14,7 +14,7 @@ class DYAnchorItem: NSObject {
     /// 房间图片对应的urlstring
     var vertical_src = ""
     /// 判断是手机直播还是电视直播
-    // 0：电脑 1：手机
+    // 0：电脑(普通房间) 1：手机（秀场房间）
     var isVertical = 0
     /// 房间名称
     var room_name = ""
